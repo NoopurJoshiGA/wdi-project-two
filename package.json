@@ -2,10 +2,13 @@
   "name": "project-2",
   "version": "1.0.0",
   "description": "Instagram full stack application using ejs, node, mongoose",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Noopur Joshi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
