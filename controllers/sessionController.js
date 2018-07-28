@@ -1,3 +1,5 @@
+//TODO: Add password hashing and validation
+
 const User = require('../models/user');
 
 function sessionsNew(req, res) {
@@ -9,13 +11,14 @@ function sessionsCreate(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
+      // ValidatePassword is defined in the user.js file
       if(!user) {
         res.status(401).render('sessions/new', { message: 'Try that again'});
       }
       //login was successful
       req.flash('primary', `Welcome back ${user.fullName}!`);
       req.session.userId = user.id;
-      res.redirect('/index');
+      res.redirect('/profile');
     });
 }
 

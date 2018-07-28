@@ -22,8 +22,9 @@ mongoose.Promise = Promise;
 // Connect to the instagramUsers database
 mongoose.connect('mongodb://localhost/instagramUsers');
 
-// Require User Model
+// Require Models
 const User = require('./models/user');
+const Image = require('./models/image');
 
 // Require Flash
 const flash = require('express-flash');

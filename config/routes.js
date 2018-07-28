@@ -30,8 +30,10 @@ router.route('/sessions')
 
 // router.get('/followers', (req, res) => res.render('pages/_followers'));
 // router.get('/newComment', (req, res) => res.render('pages/_newComment'));
-// router.get('/newImage', (req, res) => res.render('pages/_newImage'));
-// router.get('/profile', (req, res) => res.render('pages/_profile'));
+
+router.get('/newImage', (req, res) => res.render('pages/_newImage'));
+
+router.get('/profile', (req, res) => res.render('pages/_profile'));
 
 //Export Router
 module.exports = router;
