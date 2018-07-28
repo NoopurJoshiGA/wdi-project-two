@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Instagram</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-  </head>
-  <body>
-    <%- body %>
+<head>
+  <meta charset="utf-8">
+  <title>Instagram</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+</head>
+<body>
+  <div class="container">
+    <% for (const type in locals.messages) { %>
+      <div class="message is-<%= type %>">
+        <div class="message-body">
+          <%= messages[type] %>
+        </div>
+      </div>
+      <% } %>
+      <div class="section">
+        <%- body %>
+      </div>
+    </div>
   </body>
+</body>
 </html>

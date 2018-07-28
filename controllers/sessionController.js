@@ -9,9 +9,13 @@ function sessionsCreate(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
+      if(!user) {
+        res.status(401).render('sessions/new', { message: 'Try that again'});
+      }
+      //login was successful
+      req.flash('primary', `Welcome back ${user.fullName}!`);
       req.session.userId = user.id;
       res.redirect('/index');
-      console.log('login successful');
     });
 }
 
