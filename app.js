@@ -1,11 +1,11 @@
 // Require Express
 const express = require('express');
 
-// Tell Express to use express-ejs-layouts
-const expressLayouts = require('express-ejs-layouts');
-
 // Create the app by invoking the express module
 const app = express();
+
+// Tell Express to use express-ejs-layouts
+const expressLayouts = require('express-ejs-layouts');
 
 // Configure Express to use ejs
 app.set('view engine', 'ejs');
@@ -38,9 +38,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Require Method Override
 const methodOverride = require('method-override');
 
-// Get Routes from the config/routes file
-const router = require('./config/routes');
-
 //8000 is Localhost
 const PORT = 8000;
 
@@ -52,10 +49,13 @@ app.set('views', `${__dirname}/views`); //this is the default
 
 //Require Morgan
 const morgan = require('morgan');
-
-//Middleware
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({ extended: true})); //adds req.body
+
+// setup body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Setup method-override
+// Middleware
 app.use(methodOverride((req) => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     const method = req.body._method;
@@ -78,8 +78,8 @@ app.use((req, res, next) => {
   if(!req.session.userId) return next();
   User
     .findById(req.session.userId)
-  //once we've got the user from db
-  //make it available on the res object
+    // Get User from DB
+    // Make it available on req
     .then(user => {
       res.locals.user = user; //res.locals is always passed to the view engine
       res.locals.isLoggedIn = true;
@@ -87,6 +87,8 @@ app.use((req, res, next) => {
     });
 });
 
+// Get Routes from the config/routes file
+const router = require('./config/routes');
 app.use(router);
 
 // Listen app is running on port 8000

@@ -28,9 +28,6 @@ router.route('/sessions/new')
 router.route('/sessions')
   .post(sessionController.create);
 
-
-  
-
 // router.get('/followers', (req, res) => res.render('pages/_followers'));
 // router.get('/newComment', (req, res) => res.render('pages/_newComment'));
 // router.get('/newImage', (req, res) => res.render('pages/_newImage'));

@@ -9,12 +9,9 @@ function sessionsCreate(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
-      if(!user || !user.validatePassword(req.body.password)) {
-        res.status(401).render('sessions/new', { message: 'Try that again'});
-      }
-      // if login is successful
       req.session.userId = user.id;
       res.redirect('/index');
+      console.log('login successful');
     });
 }
 

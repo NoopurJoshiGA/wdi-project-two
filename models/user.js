@@ -1,6 +1,9 @@
 // Require Mongoose
 const mongoose = require('mongoose');
 
+// Require Bcrypt
+// const bcrypt = require('bcrypt');
+
 // Create db schema for Instagram Users
 const instagramUserSchema = new mongoose.Schema({
   fullName: { type: String, required: true },

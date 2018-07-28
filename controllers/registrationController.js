@@ -3,7 +3,6 @@ const User = require('../models/user');
 function registrationsNew(req, res) {
   // Render the registration form
   res.render('registrations/new');
-  console.log('New registration');
 }
 
 function registrationsCreate(req, res) {
@@ -13,7 +12,7 @@ function registrationsCreate(req, res) {
       console.log('We have created a user wooo', user);
       res.redirect('/index');
     })
-    .catch(err => res.redirect('/registrations/new'));
+    .catch(err => res.status(500).redirect('/registrations/new'));
 }
 
 module.exports = {
