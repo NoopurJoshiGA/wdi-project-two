@@ -27,6 +27,7 @@ const User = require('./models/user');
 
 // Require Flash
 const flash = require('express-flash');
+app.use(flash());
 
 // Require Body Parser (this ensures our passwords don't appear in the URL)
 const bodyParser = require('body-parser');
@@ -62,6 +63,29 @@ app.use(methodOverride((req) => {
     return method;
   }
 }));
+
+// Require Session
+const session = require('express-session');
+
+app.use(session({
+  secret: 'fnsdkfjsndfksjnf',
+  resave: false,
+  saveUninitialize: false
+}));
+
+//Check the session cookie
+app.use((req, res, next) => {
+  if(!req.session.userId) return next();
+  User
+    .findById(req.session.userId)
+  //once we've got the user from db
+  //make it available on the res object
+    .then(user => {
+      res.locals.user = user; //res.locals is always passed to the view engine
+      res.locals.isLoggedIn = true;
+      next();
+    });
+});
 
 app.use(router);
 

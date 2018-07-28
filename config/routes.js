@@ -9,18 +9,27 @@ const User = require('../models/user');
 
 //Require Controllers
 const registrationController = require('../controllers/registrationController');
+const sessionController = require('../controllers/sessionController');
 
 // Becomes an Express Router
 // Tells Express where to find the pages
 router.get('/', (req, res) => res.render('pages/_home'));
 router.get('/index', (req, res) => res.render('pages/_index'));
-router.get('/login', (req, res) => res.render('pages/_login'));
 
 router.route('/registrations/new')
   .get(registrationController.new);
 
 router.route('/registrations')
   .post(registrationController.create);
+
+router.route('/sessions/new')
+  .get(sessionController.new); //show the form
+
+router.route('/sessions')
+  .post(sessionController.create);
+
+
+  
 
 // router.get('/followers', (req, res) => res.render('pages/_followers'));
 // router.get('/newComment', (req, res) => res.render('pages/_newComment'));
