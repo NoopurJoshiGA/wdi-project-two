@@ -9,6 +9,14 @@
   "author": "Noopur Joshi",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-ejs-layouts": "^2.4.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.5",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3"
   }
 }
