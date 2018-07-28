@@ -1,1 +1,31 @@
-<h1>Register Here</h1>
+<%# TODO: insert logo here %>
+
+<h2 class="is-title">Sign up to see photos and videos from your friends</h2>
+
+<form action="/registration" method="POST">
+  <div class="field">
+    <div class="control">
+      <input class="input" type="text" placeholder="Full Name" name="fullName">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input" type="text" placeholder="Username" name="username">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input" type="email" placeholder="Email" name="email">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input" type="password" placeholder="Password" name="password">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-link has-full-width has-text-centered">Sign Up</button>
+    </div>
+  </div>
+</form>
