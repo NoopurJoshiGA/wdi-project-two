@@ -6,3 +6,13 @@
     <p class="subtitle is-3"><%= locals.user.username %> <%= image.description %></p>
   </div>
 </div>
+
+<form action="/images/<%= image.id %>" method="POST">
+  <div class="field">
+    <div class="control">
+      <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="comments"></textarea>
+      <input type="hidden" name="name" value="<%= locals.user.username %>">
+    </div>
+  </div>
+  <button class="button is-link is-fullwidth">Add</button>
+</form>
