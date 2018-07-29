@@ -1,8 +1,8 @@
 <div class="columns is-multiline">
   <div class="column">
-    <h1 class="title is-5"> <%= locals.user.username %> </h1>
-    <h1 class="title is-5"><%= image.location %></h1>
+    <h1 class="title is-8"> <%= locals.user.username %> </h1>
+    <h1 class="title is-8"><%= image.location %></h1>
     <img src="<%= image.image %>" alt="user image">
-    <h2 class="subtitle is-1"><%= image.description %></h2>
+    <p class="subtitle is-3"><%= locals.user.username %> <%= image.description %></p>
   </div>
 </div>
