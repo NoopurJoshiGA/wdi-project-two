@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost/instagramUsers');
 
 // Require Models
 const User = require('./models/user');
-const Image = require('./models/image');
+// const Image = require('./models/image');
 
 // Require Flash
 const flash = require('express-flash');
@@ -91,6 +91,12 @@ app.use((req, res, next) => {
 // Get Routes from the config/routes file
 const router = require('./config/routes');
 app.use(router);
+
+// const multer = require('multer');
+
+
+
+
 
 // Listen app is running on port 8000
 app.listen(PORT, () => console.log(`Up and running on port ${PORT}`));
