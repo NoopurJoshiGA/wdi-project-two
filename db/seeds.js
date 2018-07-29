@@ -10,7 +10,7 @@ Image.collection.drop();
 Image
   .create([
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -19,7 +19,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -28,7 +28,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -37,7 +37,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -46,7 +46,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -55,7 +55,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -64,7 +64,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -73,7 +73,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [
@@ -82,7 +82,7 @@ Image
       likes: 1000
     },
     {
-      image: 'https://images.pexels.com/photos/371393/pexels-photo-371393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
       location: 'Japan',
       description: 'Sakura Season',
       comments: [

@@ -28,6 +28,7 @@ router.route('/sessions/new')
   .get(sessionController.new); //show the form
 
 router.route('/sessions')
+  .get(sessionController.index)
   .post(sessionController.create);
 
 router.route('/images/new')
@@ -37,14 +38,8 @@ router.route('/images')
   .get(imageController.index)
   .post(imageController.create);
 
-
-// // Upload an image page
-// router.route('/images/new')
-//   .get(imageController.new);
-//
-// router.route('/images')
-//   .get(imageController.index)
-//   .post(imageController.create);
+router.route('/images/:id')
+  .get(imageController.show);
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 

@@ -26,8 +26,16 @@ function imagesIndex(req, res) {
     });
 }
 
+function imagesShow(req, res) {
+  const imageId = req.params.id;
+  Image
+    .findById(imageId)
+    .then(image => res.render('images/show', { image }));
+}
+
 module.exports = {
   new: imagesNew,
   create: imagesPost,
-  index: imagesIndex
+  index: imagesIndex,
+  show: imagesShow
 };

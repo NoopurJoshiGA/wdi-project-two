@@ -1,11 +1,12 @@
 <h1>Profile</h1>
 
 <div class="container">
+  <h1><%= locals.user.fullName %></h1>
   <div class="columns is-multiline is-mobile">
   <% images.forEach(image => { %>
     <div class="column is-one-third-mobile is-one-third-tablet is-one-third-desktop">
     <a href="/images/<%= image.id %>">
-    <img src=<%= image.image %> >
+    <img class="images" src=<%= image.image %> >
     </a>
     </div>
     <% }) %>

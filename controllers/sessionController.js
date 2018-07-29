@@ -22,7 +22,17 @@ function sessionsCreate(req, res) {
     });
 }
 
+// Function to display information in your profile page
+function sessionsIndex(req, res) {
+  User
+    .find()
+    .then(user => {
+      res.render('images/index', { user });
+    });
+}
+
 module.exports = {
   new: sessionsNew,
-  create: sessionsCreate
+  create: sessionsCreate,
+  index: sessionsIndex
 };
