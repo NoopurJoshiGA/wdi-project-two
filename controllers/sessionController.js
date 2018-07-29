@@ -18,7 +18,7 @@ function sessionsCreate(req, res) {
       //login was successful
       req.flash('primary', `Welcome back ${user.fullName}!`);
       req.session.userId = user.id;
-      res.redirect('/profile');
+      res.redirect('/index');
     });
 }
 

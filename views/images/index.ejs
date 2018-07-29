@@ -1,0 +1,14 @@
+<h1>Profile</h1>
+
+
+<div class="columns is-multiline">
+<% images.forEach(image => { %>
+  <div class="column is-one-third">
+  <a href="/images/<%= image.id %>">
+  <img src=<%= image.image %> />
+  <h2 class="title is-6"><%= image.location %></h2>
+  <h3 class="subtitle is-2"><%= image.description %></h3>
+  </a>
+  </div>
+  <% }) %>
+</div>

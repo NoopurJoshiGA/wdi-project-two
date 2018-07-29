@@ -17,7 +17,6 @@ const imageController = require('../controllers/imageController');
 // Tells Express where to find the pages
 router.get('/', (req, res) => res.render('pages/_home'));
 router.get('/index', (req, res) => res.render('pages/_index'));
-router.get('/profile', (req, res) => res.render('pages/_profile'));
 
 router.route('/registrations/new')
   .get(registrationController.new);
@@ -35,7 +34,19 @@ router.route('/images/new')
   .get(imageController.new);
 
 router.route('/images')
+  .get(imageController.index)
   .post(imageController.create);
+
+
+// // Upload an image page
+// router.route('/images/new')
+//   .get(imageController.new);
+//
+// router.route('/images')
+//   .get(imageController.index)
+//   .post(imageController.create);
+
+// router.get('/profile', (req, res) => res.render('images/index'));
 
 // router.get('/followers', (req, res) => res.render('pages/_followers'));
 // router.get('/newComment', (req, res) => res.render('pages/_newComment'));
