@@ -12,6 +12,7 @@ const Image = require('../models/image');
 const registrationController = require('../controllers/registrationController');
 const sessionController = require('../controllers/sessionController');
 const imageController = require('../controllers/imageController');
+const commentController = require('../controllers/commentController');
 
 // Becomes an Express Router
 // Tells Express where to find the pages
@@ -40,6 +41,9 @@ router.route('/images')
 
 router.route('/images/:id')
   .get(imageController.show);
+
+router.route('/images/:imageId/')
+  .post(commentController.create);
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 

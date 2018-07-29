@@ -1,18 +1,31 @@
-<div class="columns is-multiline">
-  <div class="column">
-    <h1 class="title is-8"> <%= locals.user.username %> </h1>
-    <h1 class="title is-8"><%= image.location %></h1>
-    <img src="<%= image.image %>" alt="user image">
-    <p class="subtitle is-3"><%= locals.user.username %> <%= image.description %></p>
-  </div>
-</div>
+<%# Profile pic, username and location %>
+<p class="has-text-weight-bold"> <%= locals.user.username %> </p>
+<p class="subtitle"><%= image.location %></p>
 
-<form action="/images/<%= image.id %>" method="POST">
-  <div class="field">
-    <div class="control">
-      <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="comments"></textarea>
-      <input type="hidden" name="name" value="<%= locals.user.username %>">
+<%# Image %>
+<img src="<%= image.image %>" alt="user image">
+
+<%# Username and description %>
+<p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
+<%= image.description %>
+</p>
+
+<hr>
+
+<% image.comments.forEach(comment => { %>
+  <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
+  <%= comment.content %>
+  </p>
+  <% }) %>
+
+  <hr>
+
+  <form action="/images/<%= image.id %>" method="POST">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="content"></textarea>
+        <input type="hidden" name="name" value="<%= locals.user.username %>">
+      </div>
     </div>
-  </div>
-  <button class="button is-link is-fullwidth">Add</button>
-</form>
+    <button class="button is-link is-fullwidth">Add</button>
+  </form>
