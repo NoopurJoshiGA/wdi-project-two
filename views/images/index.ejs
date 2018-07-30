@@ -6,7 +6,7 @@
 </div>
 <div class="column is-two-thirds">
   <h1 class="is-size-2 has-text-black"><%= locals.user.username %></h1>
-  <button class="button">Edit Profile</button>
+  <a href="/images/editProfile" class="button">Edit Profile</a>
 </div>
 </div>
   <div class="columns is-multiline is-mobile">
@@ -14,7 +14,7 @@
   <% images.filter(image => image.createdBy.id === locals.user.id).forEach(image => { %>
     <div class="column is-one-third-mobile is-one-third-tablet is-one-third-desktop">
     <a href="/images/<%= image.id %>">
-    <img class="images" src=<%= image.image %> >
+    <img class="imageBoard" src=<%= image.image %> >
     </a>
     </div>
     <% }) %>

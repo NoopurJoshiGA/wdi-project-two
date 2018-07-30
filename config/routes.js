@@ -18,6 +18,7 @@ const commentController = require('../controllers/commentController');
 // Tells Express where to find the pages
 router.get('/', (req, res) => res.render('pages/_home'));
 router.get('/index', (req, res) => res.render('pages/_index'));
+// router.get('/editProfile', (req, res) => res.render('images/editProfile'));
 
 router.route('/registrations/new')
   .get(registrationController.new);
@@ -43,13 +44,18 @@ router.route('/images')
   .post(imageController.create);
 
 router.route('/images/:id')
-  .get(imageController.show);
+  .get(imageController.show)
+  .put(imageController.update);
 
 router.route('/images/:imageId/')
   .post(commentController.create);
 
 router.route('/images/:imageId/comments/:commentId')
   .delete(commentController.delete);
+
+router.route('/images/:id/edit')
+  .get(imageController.edit);
+
 
 
 // router.get('/profile', (req, res) => res.render('images/index'));

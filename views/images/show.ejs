@@ -1,31 +1,40 @@
 
 <p class="has-text-weight-bold"> <%= locals.user.username %> </p>
 <p class="subtitle"><%= image.location %></p>
-<img src="<%= image.image %>" alt="user image">
-<p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
-<%= image.description %>
-</p>
 
-<hr>
-
-<% image.comments.forEach(comment => { %>
-  <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
-  <%= comment.content %>
-  </p>
-  <% if (locals.isLoggedIn && locals.user.username === comment.name) { %>
-    <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <button class="tag is-delete"></button>
-    </form>
-    <% } %>
-  <% }) %>
-
-  <form action="/images/<%= image.id %>" method="POST">
-    <div class="field">
-      <div class="control">
-        <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="content"></textarea>
-        <input type="hidden" name="name" value="<%= locals.user.username %>">
-      </div>
-    </div>
-    <button class="button is-link is-fullwidth">Add</button>
+<% if (locals.isLoggedIn) { %>
+  <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
+  <form class="" action="/images/<%= image.id %>" method="POST">
+  <button class="button is-warning">Delete</button>
+  <input type="hidden" name="_method" value="DELETE">
   </form>
+  <% } %>
+
+  <img src="<%= image.image %>" alt="user image">
+  <p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
+    <%= image.description %>
+  </p>
+
+  <hr>
+
+  <% image.comments.forEach(comment => { %>
+    <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
+    <%= comment.content %>
+    </p>
+    <% if (locals.isLoggedIn && locals.user.username === comment.name) { %>
+      <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="tag is-delete"></button>
+      </form>
+      <% } %>
+      <% }) %>
+
+      <form action="/images/<%= image.id %>" method="POST">
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="content"></textarea>
+            <input type="hidden" name="name" value="<%= locals.user.username %>">
+          </div>
+        </div>
+        <button class="button is-link is-fullwidth">Add</button>
+      </form>
