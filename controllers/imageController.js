@@ -8,11 +8,15 @@ function imagesNew(req, res) {
 
 // Function to upload the picture and redirect you back to your profile
 function imagesCreate(req, res) {
+  console.log('this is req.body before we add res =>', req.body);
+  console.log('res.locals.user._id =>', res.locals.user._id);
+  req.body.createdBy = res.locals.user._id;
+  console.log('this is req.body =>', req.body);
   Image
     .create(req.body)
     .then(image => {
       console.log('Uploading image...', image);
-      res.redirect('images/index');
+      res.redirect('/images');
     })
     .catch(err => res.status(500).send(err));
 }

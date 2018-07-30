@@ -3,7 +3,7 @@
 <h1>Upload an image</h1>
 
 <form action="/images" method="POST">
-  <div class="file has-name">
+  <%# <div class="file has-name">
     <label class="file-label">
       <input class="file-input" type="file" name="image">
       <span class="file-cta">
@@ -15,7 +15,12 @@
         </span>
       </span>
     </label>
-  </div>
+  </div> %>
+  <div class="field">
+    <div class="control">
+      <input class="input is-fullwidth" type="text" placeholder="Image URL" name="image">
+    </div>
+  </div
   <div class="field">
     <div class="control">
       <input class="input is-fullwidth" type="text" placeholder="Location (Optional)" name="location">

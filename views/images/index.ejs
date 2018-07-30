@@ -4,7 +4,8 @@
 <div class="container">
   <h1><%= locals.user.fullName %></h1>
   <div class="columns is-multiline is-mobile">
-  <% images.forEach(image => { %>
+    <%# TODO: add a userSchema.methods.createdImages(). The model should fetch its own images! %>
+  <% images.filter(image => image.createdBy.id === locals.user.id).forEach(image => { %>
     <div class="column is-one-third-mobile is-one-third-tablet is-one-third-desktop">
     <a href="/images/<%= image.id %>">
     <img class="images" src=<%= image.image %> >
