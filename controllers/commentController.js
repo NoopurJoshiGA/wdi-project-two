@@ -26,7 +26,6 @@ function commentsDelete(req, res, next) {
     .catch(next);
 }
 
-
 module.exports = {
   create: commentsCreate,
   delete: commentsDelete
