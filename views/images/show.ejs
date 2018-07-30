@@ -12,9 +12,13 @@
   <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
   <%= comment.content %>
   </p>
+  <% if (locals.isLoggedIn && locals.user.username === comment.name) { %>
+    <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="tag is-delete"></button>
+    </form>
+    <% } %>
   <% }) %>
-
-  <hr>
 
   <form action="/images/<%= image.id %>" method="POST">
     <div class="field">

@@ -1,8 +1,14 @@
 
-<h1>Profile</h1>
-
 <div class="container">
-  <h1><%= locals.user.fullName %></h1>
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-third ">
+  <img class="profilePic" src=<%= locals.user.imageUrl %>>
+</div>
+<div class="column is-two-thirds">
+  <h1 class="is-size-2 has-text-black"><%= locals.user.username %></h1>
+  <button class="button">Edit Profile</button>
+</div>
+</div>
   <div class="columns is-multiline is-mobile">
     <%# TODO: add a userSchema.methods.createdImages(). The model should fetch its own images! %>
   <% images.filter(image => image.createdBy.id === locals.user.id).forEach(image => { %>

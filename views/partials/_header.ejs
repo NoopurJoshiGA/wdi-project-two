@@ -1,26 +1,24 @@
- <%# TODO: Add proper  %>
+<%# TODO: Add proper  %>
 
 <nav class="navbar is-white is-fullwidth" role="navigation" aria-label="main navigation">
   <div class="container">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/index">
-      <img src="/logo.png" alt="Instagram Logo">
-    </a>
-    <a class="navbar-item">|</a>
-    <a class="navbar-item" href="/index">
-    <img src="/instalogo.png" alt="Instagram Text Logo">
-    </a>
-  </div>
-  <div class="container">
-    <div class="navbar-end">
-      <div class="navbar-menu">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/index">
+        <img src="/logo.png" alt="Instagram Logo">
+      </a>
+      <a class="navbar-item">|</a>
+      <a class="navbar-item" href="/index">
+        <img src="/instalogo.png" alt="Instagram Text Logo">
+      </a>
+    </div>
+    <div class="container">
+      <div class="navbar-end">
         <% if (locals.isLoggedIn) { %>
           <a class="navbar-item" href="/sessions/delete">Log out <%= locals.user.fullName %></a>
           <a class="navbar-item" href="/images/new">Upload Image</a>
           <a class='navbar-item' href="/images">Profile</a>
           <%  } %>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</nav>
+  </nav>

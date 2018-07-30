@@ -22,3 +22,10 @@ img {
 img:hover {
   background-color: red;
 }
+
+
+img.profilePic {
+    border-radius: 50%;
+    border: 5px grey solid;
+    height: 150px;
+  }

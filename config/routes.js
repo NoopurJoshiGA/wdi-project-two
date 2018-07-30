@@ -48,8 +48,9 @@ router.route('/images/:id')
 router.route('/images/:imageId/')
   .post(commentController.create);
 
-// router.route('/images/:imageId/comments/:commentId')
-//   .post(commentController.delete);
+router.route('/images/:imageId/comments/:commentId')
+  .delete(commentController.delete);
+
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 
