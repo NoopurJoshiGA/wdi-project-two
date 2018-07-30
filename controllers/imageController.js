@@ -7,7 +7,7 @@ function imagesNew(req, res) {
 }
 
 // Function to upload the picture and redirect you back to your profile
-function imagesPost(req, res) {
+function imagesCreate(req, res) {
   Image
     .create(req.body)
     .then(image => {
@@ -21,7 +21,9 @@ function imagesPost(req, res) {
 function imagesIndex(req, res) {
   Image
     .find()
+    .populate('createdBy')
     .then(images => {
+      console.log('images index');
       res.render('images/index', { images });
     });
 }
@@ -35,7 +37,7 @@ function imagesShow(req, res) {
 
 module.exports = {
   new: imagesNew,
-  create: imagesPost,
+  create: imagesCreate,
   index: imagesIndex,
   show: imagesShow
 };

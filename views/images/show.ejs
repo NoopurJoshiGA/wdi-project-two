@@ -1,11 +1,7 @@
-<%# Profile pic, username and location %>
+
 <p class="has-text-weight-bold"> <%= locals.user.username %> </p>
 <p class="subtitle"><%= image.location %></p>
-
-<%# Image %>
 <img src="<%= image.image %>" alt="user image">
-
-<%# Username and description %>
 <p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
 <%= image.description %>
 </p>

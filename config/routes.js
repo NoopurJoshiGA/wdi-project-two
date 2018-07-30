@@ -32,6 +32,9 @@ router.route('/sessions')
   .get(sessionController.index)
   .post(sessionController.create);
 
+router.route('/sessions/delete')
+  .get(sessionController.delete);
+
 router.route('/images/new')
   .get(imageController.new);
 
@@ -44,6 +47,9 @@ router.route('/images/:id')
 
 router.route('/images/:imageId/')
   .post(commentController.create);
+
+router.route('/images/:imageId/comments/:commentId')
+  .post(commentController.delete);
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 

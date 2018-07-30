@@ -31,8 +31,16 @@ function sessionsIndex(req, res) {
     });
 }
 
+function sessionsDelete(req, res) {
+  return req.session.regenerate(() => {
+    req.flash('success', 'You have been logged out');
+    res.redirect('/');
+  });
+}
+
 module.exports = {
   new: sessionsNew,
   create: sessionsCreate,
-  index: sessionsIndex
+  index: sessionsIndex,
+  delete: sessionsDelete
 };
