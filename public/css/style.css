@@ -33,3 +33,18 @@ img.profilePic {
   border-radius: 50%;
   height: 64px;
 }
+
+.instagramLogo {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+footer {
+  /* TODO: BEAT BULMA AND STYLE THE FOOTER  */
+}
+
+.registrationMessage {
+  padding: 1rem;
+}
