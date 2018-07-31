@@ -54,19 +54,19 @@ function imagesUpdate(req, res) {
     .then(image => res.redirect(`/images/${image.id}`))
     .catch(err => res.status(500).send(err));
 }
-//
-// function imagesDelete(req, res) {
-//   Image
-//     .findByIdAndDelete(req.params.id)
-//     .then(() => res.redirect('/images'))
-//     .catch(err => res.status(404).send(err));
-// }
+
+function imagesDelete(req, res) {
+  Image
+    .findByIdAndDelete(req.params.id)
+    .then(() => res.redirect('/index'))
+    .catch(err => res.status(404).send(err));
+}
 
 module.exports = {
   new: imagesNew,
   create: imagesCreate,
   show: imagesShow,
   edit: imagesEdit,
-  update: imagesUpdate
-  // delete: imagesDelete
+  update: imagesUpdate,
+  delete: imagesDelete
 };

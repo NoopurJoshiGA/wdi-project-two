@@ -71,15 +71,15 @@ router.route('/images')
 
 router.route('/images/:id')
   .get(imageController.show)
-  .put(imageController.update);
-  // .delete((req, res, next) => {
-  //   if(req.session.userId) {
-  //     imageController.delete(req, res, next);
-  //   } else {
-  //     res.redirect('/sessions/new', { message: 'Please log in to delete this image'});
-  //   }
-//   });
-//
+  .put(imageController.update)
+  .delete((req, res, next) => {
+    if(req.session.userId) {
+      imageController.delete(req, res, next);
+    } else {
+      res.redirect('/sessions/new', { message: 'Please log in to delete this image'});
+    }
+  });
+
 router.route('/images/:id/edit')
   .get(secureRoute, imageController.edit);
 //
