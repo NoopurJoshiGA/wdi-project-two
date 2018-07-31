@@ -28,7 +28,7 @@ function imagesIndex(req, res) {
     .populate('createdBy')
     .then(images => {
       console.log('images index');
-      res.render('images/index', { images });
+      res.render('users/', { images });
     });
 }
 

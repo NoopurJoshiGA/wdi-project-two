@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-third ">
+  <img class="profilePic" src="<%= user.imageUrl %>">
+</div>
+<div class="column is-two-thirds">
+  <h1 class="is-size-2 has-text-black"><%= user.username %></h1>
+  <a href="/users/<%=user.id %>/edit" class="button">Edit Profile</a>
+</div>
+</div>
+  <div class="columns is-multiline is-mobile">
+    <%# TODO: add a userSchema.methods.createdImages(). The model should fetch its own images! %>
+  <% photos.forEach(image => { %>
+    <div class="column is-one-third-mobile is-one-third-tablet is-one-third-desktop">
+    <a href="/images/<%= image.id %>">
+    <img class="imageBoard" src=<%= image.image %> >
+    </a>
+    </div>
+    <% }) %>
+  </div>
+</div>

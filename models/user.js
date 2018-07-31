@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 // Require Bcrypt
 const bcrypt = require('bcrypt');
 
+const Image = require('./image');
+
 // Create db schema for Instagram Users
 const instagramUserSchema = new mongoose.Schema({
   imageUrl: String,
@@ -25,6 +27,16 @@ instagramUserSchema.virtual('passwordConfirmation')
   .set(function(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation;
   });
+
+instagramUserSchema.methods.getPhotos = function getPhotos() {
+  return Image
+    .find()
+    .then(images => {
+      const photos = images.filter(image => image.createdBy.toString() === this.id.toString());
+      return photos;
+    });
+};
+
 
 instagramUserSchema.pre('validate', function(next) {
   //this is the model

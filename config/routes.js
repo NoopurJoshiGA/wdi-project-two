@@ -53,31 +53,34 @@ router.route('/images')
   .get(imageController.index)
   .post(imageController.create);
 
-router.route('/images/:id')
-  .get(imageController.show)
-  .put(imageController.update)
-  .delete((req, res, next) => {
-    if(req.session.userId) {
-      imageController.delete(req, res, next);
-    } else {
-      res.redirect('/sessions/new', { message: 'Please log in to delete this image'});
-    }
-  });
-
-router.route('/images/:imageId/')
-  .post(commentController.create);
-
-router.route('/images/:imageId/comments/:commentId')
-  .delete(secureRoute, commentController.delete);
-
-router.route('/images/:id/edit')
-  .get(secureRoute, imageController.edit);
-
-router.route('/users/:id/edit')
-  .get(secureRoute, userController.edit);
-
 router.route('/users/:id')
-  .put(userController.update);
+  .get(userController.show);
+
+// router.route('/images/:id')
+//   .get(imageController.show)
+//   .put(imageController.update)
+//   .delete((req, res, next) => {
+//     if(req.session.userId) {
+//       imageController.delete(req, res, next);
+//     } else {
+//       res.redirect('/sessions/new', { message: 'Please log in to delete this image'});
+//     }
+// //   });
+//
+// router.route('/images/:imageId/')
+//   .post(commentController.create);
+//
+// router.route('/images/:imageId/comments/:commentId')
+//   .delete(secureRoute, commentController.delete);
+//
+// router.route('/images/:id/edit')
+//   .get(secureRoute, imageController.edit);
+//
+// router.route('/users/:id/edit')
+//   .get(secureRoute, userController.edit);
+//
+// router.route('/users/:id')
+//   .put(userController.update);
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 

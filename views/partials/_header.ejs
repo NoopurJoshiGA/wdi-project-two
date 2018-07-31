@@ -16,7 +16,7 @@
         <% if (locals.isLoggedIn) { %>
           <a class="navbar-item" href="/sessions/delete">Log out <%= locals.user.fullName %></a>
           <a class="navbar-item" href="/images/new">Upload Image</a>
-          <a class='navbar-item' href="/images">Profile</a>
+          <a class='navbar-item' href="/users/<%=locals.user.id%>">Profile</a>
           <%  } %>
         </div>
       </div>
