@@ -25,13 +25,13 @@ function usersEdit(req, res) {
     .catch(err => res.status(404).send(err));
 }
 
-// TODO: THIS FUNCTION WORKS BUT NEEDS FIXING
+// TODO: THIS FUNCTION WORKS IN DB BUT NEEDS FIXING FRONT-END
 function usersUpdate(req, res) {
   console.log('Into the user update .........');
   //you want to use Users because that's the Model and you need it whenever you wanna make changes to the db
   User
     .findByIdAndUpdate(req.params.id, req.body)
-    .then(() => res.redirect('/users/show'))
+    .then( () => res.redirect('/users/${user.id}'))
     .catch(err => res.status(500).send(err));
 }
 

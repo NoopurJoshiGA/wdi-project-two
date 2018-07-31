@@ -46,13 +46,6 @@ router.route('/sessions')
 router.route('/sessions/delete')
   .get(sessionController.delete);
 
-router.route('/images/new')
-  .get(secureRoute, imageController.new);
-
-router.route('/images')
-  .get(imageController.index)
-  .post(imageController.create);
-
 // Show User Profile
 // Each User has their own User ID
 router.route('/users/:id')
@@ -64,8 +57,21 @@ router.route('/users/:id/edit')
 router.route('/users/:id')
   .put(userController.update);
 
+router.route('/images/new')
+  .get(secureRoute, imageController.new);
+
+router.route('/images')
+  // .get(imageController.index)
+  .post(imageController.create);
+
+// router.route('/images')
+//   .get(imageController.index)
+//   .post(imageController.create);
+
+
+
 // router.route('/images/:id')
-//   .get(imageController.show)
+//   // .get(imageController.show)
 //   .put(imageController.update)
 //   .delete((req, res, next) => {
 //     if(req.session.userId) {
