@@ -41,6 +41,10 @@ img.profilePic {
   padding-bottom: 20px;
 }
 
+.instagramLogo:hover {
+  background-color: none;
+}
+
 footer {
   /* TODO: BEAT BULMA AND STYLE THE FOOTER  */
 }

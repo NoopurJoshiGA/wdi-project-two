@@ -31,7 +31,7 @@ instagramUserSchema.pre('validate', function(next) {
   console.log('Pre-validate hook has happened');
   if(this._passwordConfirmation !== this.password) {
     console.log('Passwords did not match');
-    this.invalidate('passwordConfirmation', 'does not match');
+    this.invalidate('passwordConfirmation', 'Passwords do not match');
   }
   next(); //we've finished thanks. Mongoose can do the next thing in the lifecycle
 });

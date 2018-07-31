@@ -9,11 +9,21 @@ function registrationsCreate(req, res) {
   User
     .create(req.body)
     .then(user => {
+      console.log(user);
       console.log('We have created a user wooo', user);
       res.redirect('/index');
     })
-    .catch(err => res.status(500).redirect('/registrations/new'));
+    .catch(err => {
+      console.log(err);
+      for(const label in err.errors) {
+        req.flash('warning', `${err.errors[label].message}`);
+      }
+      // req.flash('warning', `An error occured: ${err}!`);
+      res.status(500).redirect('/registrations/new');
+    }
+    );
 }
+
 
 module.exports = {
   new: registrationsNew,

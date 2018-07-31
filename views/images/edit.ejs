@@ -3,6 +3,7 @@
 <% if (locals.isLoggedIn) { %>
   <img src="<%= image.image %>">
   <% } %>
+  
 <form method="POST" action="/images/<%= image.id %>">
   <div class="field">
     <div class="control">

@@ -1,0 +1,35 @@
+
+<h2 class="title is-2">Edit Profile</h2>
+<% if (locals.isLoggedIn) { %>
+  <img src="<%= user.imageUrl %>">
+  <% } %>
+
+<form method="POST" action="/users/<%= user.id %>">
+  <div class="field">
+    <div class="control">
+      <input class="input is-fullwidth" type="text" value="<%= user.fullName %>" name="fullName">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-fullwidth" type="text" value="<%= user.description %>" name="description">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-fullwidth" type="text" value="<%= user.username %>" name="username">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-fullwidth" type="text" value="<%= user.email %>" name="email">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-fullwidth" type="text" value="<%= user.password %>" name="password">
+    </div>
+  </div>
+  <input type="hidden" name="_method" value="PUT">
+  <button class="button is-link is-fullwidth">Save</button>
+</form>

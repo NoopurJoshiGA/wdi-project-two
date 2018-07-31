@@ -16,7 +16,7 @@ function sessionsCreate(req, res) {
         res.status(401).render('sessions/new', { message: 'Try that again'});
       }
       //login was successful
-      req.flash('primary', `Welcome back ${user.username}!`);
+      req.flash('primary', `Welcome back ${user.fullName}!`);
       req.session.userId = user.id;
       res.redirect('/index');
     });

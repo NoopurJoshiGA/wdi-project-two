@@ -4,15 +4,25 @@ const express = require('express');
 // Require Router
 const router = express.Router();
 
-// Require Models
-const User = require('../models/user');
-const Image = require('../models/image');
-
 //Require Controllers
 const registrationController = require('../controllers/registrationController');
 const sessionController = require('../controllers/sessionController');
 const imageController = require('../controllers/imageController');
 const commentController = require('../controllers/commentController');
+const userController = require('../controllers/userController');
+
+function secureRoute(req, res, next) {
+  //if your middleware is always going to end then don't need next.
+  //If the middleware aint going anywhere then you need next
+  if(!req.session.userId) {
+    // User is not logged in. Disallow!
+    return req.session.regenerate(() => {
+      req.flash('danger', 'Please log in to view this page');
+      res.redirect('/sessions/new');
+    });
+  }
+  return next();
+}
 
 // Becomes an Express Router
 // Tells Express where to find the pages
@@ -37,7 +47,7 @@ router.route('/sessions/delete')
   .get(sessionController.delete);
 
 router.route('/images/new')
-  .get(imageController.new);
+  .get(secureRoute, imageController.new);
 
 router.route('/images')
   .get(imageController.index)
@@ -58,12 +68,16 @@ router.route('/images/:imageId/')
   .post(commentController.create);
 
 router.route('/images/:imageId/comments/:commentId')
-  .delete(commentController.delete);
+  .delete(secureRoute, commentController.delete);
 
 router.route('/images/:id/edit')
-  .get(imageController.edit);
+  .get(secureRoute, imageController.edit);
 
+router.route('/users/:id/edit')
+  .get(secureRoute, userController.edit);
 
+router.route('/users/:id')
+  .put(userController.update);
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 
