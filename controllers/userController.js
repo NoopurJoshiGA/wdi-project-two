@@ -17,23 +17,24 @@ function usersShow(req, res) {
     });
 }
 
-// function userProfileEdit(req, res) {
-//   console.log('Into the user profile edit.........');
-//   User
-//     .findById(req.params.id)
-//     .then(user => res.render('users/edit', { user }))
-//     .catch(err => res.status(404).send(err));
-// }
-//
-// function userProfileUpdate(req, res) {
-//   console.log('Into the user update .........');
-//   //you want to use Users because that's the Model and you need it whenever you wanna make changes to the db
-//   User
-//     .findByIdAndUpdate(req.params.id, req.body)
-//     .then(() => res.redirect('/images/user.id'))
-//     .catch(err => res.status(500).send(err));
-// }
-//
+function usersEdit(req, res) {
+  console.log('Into the user profile edit.........');
+  User
+    .findById(req.params.id)
+    .then(user => res.render('users/edit', { user }))
+    .catch(err => res.status(404).send(err));
+}
+
+// TODO: THIS FUNCTION WORKS BUT NEEDS FIXING
+function usersUpdate(req, res) {
+  console.log('Into the user update .........');
+  //you want to use Users because that's the Model and you need it whenever you wanna make changes to the db
+  User
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.redirect('/users/show'))
+    .catch(err => res.status(500).send(err));
+}
+
 // function userProfileDelete(req, res) {
 //   console.log('Into the user profile delete.........');
 //   Image
@@ -43,8 +44,8 @@ function usersShow(req, res) {
 // }
 
 module.exports = {
-  show: usersShow
-  // edit: userProfileEdit,
-  // update: userProfileUpdate,
+  show: usersShow,
+  edit: usersEdit,
+  update: usersUpdate
   // delete: userProfileDelete
 };

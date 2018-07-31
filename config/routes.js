@@ -53,8 +53,16 @@ router.route('/images')
   .get(imageController.index)
   .post(imageController.create);
 
+// Show User Profile
+// Each User has their own User ID
 router.route('/users/:id')
   .get(userController.show);
+
+router.route('/users/:id/edit')
+  .get(secureRoute, userController.edit);
+
+router.route('/users/:id')
+  .put(userController.update);
 
 // router.route('/images/:id')
 //   .get(imageController.show)
@@ -69,18 +77,13 @@ router.route('/users/:id')
 //
 // router.route('/images/:imageId/')
 //   .post(commentController.create);
-//
-// router.route('/images/:imageId/comments/:commentId')
-//   .delete(secureRoute, commentController.delete);
-//
+// //
+// // router.route('/images/:imageId/comments/:commentId')
+// //   .delete(secureRoute, commentController.delete);
+// //
 // router.route('/images/:id/edit')
 //   .get(secureRoute, imageController.edit);
-//
-// router.route('/users/:id/edit')
-//   .get(secureRoute, userController.edit);
-//
-// router.route('/users/:id')
-//   .put(userController.update);
+// //
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 
