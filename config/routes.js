@@ -82,13 +82,12 @@ router.route('/images/:id')
 
 router.route('/images/:id/edit')
   .get(secureRoute, imageController.edit);
-//
-// router.route('/images/:imageId/')
-//   .post(commentController.create);
-// //
-// // router.route('/images/:imageId/comments/:commentId')
-// //   .delete(secureRoute, commentController.delete);
-// //
+
+router.route('/images/:imageId/')
+  .post(commentController.create);
+
+router.route('/images/:imageId/comments/:commentId')
+  .delete(secureRoute, commentController.delete);
 
 // router.get('/profile', (req, res) => res.render('images/index'));
 
