@@ -33,12 +33,12 @@ function imagesCreate(req, res) {
 //     });
 // }
 
-// function imagesShow(req, res) {
-//   const imageId = req.params.id;
-//   Image
-//     .findById(imageId)
-//     .then(image => res.render('images/show', { image }));
-// }
+function imagesShow(req, res) {
+  const imageId = req.params.id;
+  Image
+    .findById(imageId)
+    .then(image => res.render('images/show', { image }));
+}
 //
 // function imagesEdit(req, res) {
 //   Image
@@ -64,8 +64,8 @@ function imagesCreate(req, res) {
 
 module.exports = {
   new: imagesNew,
-  create: imagesCreate
-  // show: imagesShow
+  create: imagesCreate,
+  show: imagesShow
   // edit: imagesEdit,
   // update: imagesUpdate,
   // delete: imagesDelete
