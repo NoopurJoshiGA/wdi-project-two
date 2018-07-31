@@ -70,8 +70,8 @@ router.route('/images')
 
 
 router.route('/images/:id')
-  .get(imageController.show);
-  // .put(imageController.update)
+  .get(imageController.show)
+  .put(imageController.update);
   // .delete((req, res, next) => {
   //   if(req.session.userId) {
   //     imageController.delete(req, res, next);
@@ -80,14 +80,14 @@ router.route('/images/:id')
   //   }
 //   });
 //
+router.route('/images/:id/edit')
+  .get(secureRoute, imageController.edit);
+//
 // router.route('/images/:imageId/')
 //   .post(commentController.create);
 // //
 // // router.route('/images/:imageId/comments/:commentId')
 // //   .delete(secureRoute, commentController.delete);
-// //
-// router.route('/images/:id/edit')
-//   .get(secureRoute, imageController.edit);
 // //
 
 // router.get('/profile', (req, res) => res.render('images/index'));
