@@ -1,40 +1,56 @@
 
-<p class="has-text-weight-bold"> <%= locals.user.username %> </p>
-<p class="subtitle"><%= image.location %></p>
+<div class="container">
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-2">
+      <figure class="image is-64x64">
+        <img class="profilePicSmall" src=<%= locals.user.imageUrl %>>
+      </figure>
+    </div>
+    <div class="column is-two-thirds">
+      <p class="is-size-5 has-text-black has-text-weight-bold"><%= locals.user.username %></p>
+      <p class="is-size-5"><i class="fas fa-map-marker-alt"></i> <%= image.location %></p>
+    </div>
+  </div>
 
-<% if (locals.isLoggedIn) { %>
-  <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
-  <form class="" action="/images/<%= image.id %>" method="POST">
-  <button class="button is-warning">Delete</button>
-  <input type="hidden" name="_method" value="DELETE">
-  </form>
-  <% } %>
-
-  <img src="<%= image.image %>" alt="user image">
-  <p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
-    <%= image.description %>
-  </p>
-
-  <hr>
-  
-  <% image.comments.forEach(comment => { %>
-    <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
-    <%= comment.content %>
-    </p>
-    <% if (locals.isLoggedIn && locals.user.username === comment.name) { %>
-      <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <button class="tag is-delete"></button>
-      </form>
-      <% } %>
-      <% }) %>
-
-      <form action="/images/<%= image.id %>" method="POST">
-        <div class="field">
-          <div class="control">
-            <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="content"></textarea>
-            <input type="hidden" name="name" value="<%= locals.user.username %>">
-          </div>
+  <div class="level is-mobile">
+    <div class="level-left">
+      <% if (locals.isLoggedIn) { %>
+        <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
+        <form class="" action="/images/<%= image.id %>" method="POST">
         </div>
-        <button class="button is-link is-fullwidth">Add</button>
-      </form>
+        <div class="level-right">
+        <button class="button is-warning">Delete</button>
+        <input type="hidden" name="_method" value="DELETE">
+        </form>
+        <% } %>
+      </div>
+    </div>
+
+    <img src="<%= image.image %>" alt="user image">
+    <p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
+      <%= image.description %>
+    </p>
+
+    <hr>
+
+    <% image.comments.forEach(comment => { %>
+      <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
+      <%= comment.content %>
+      </p>
+      <% if (locals.isLoggedIn && locals.user.username === comment.name) { %>
+        <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button class="tag is-delete"></button>
+        </form>
+        <% } %>
+        <% }) %>
+
+        <form action="/images/<%= image.id %>" method="POST">
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="content"></textarea>
+              <input type="hidden" name="name" value="<%= locals.user.username %>">
+            </div>
+          </div>
+          <button class="button is-link is-fullwidth">Add</button>
+        </form>

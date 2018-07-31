@@ -1,9 +1,9 @@
+
 <h2 class="title is-2">Edit</h2>
-
-
+<% if (locals.isLoggedIn) { %>
+  <img src="<%= image.image %>">
+  <% } %>
 <form method="POST" action="/images/<%= image.id %>">
-
-
   <div class="field">
     <div class="control">
       <input class="input is-fullwidth" type="text" value="<%= image.location %>" name="location">
@@ -14,8 +14,6 @@
       <input class="input is-fullwidth" type="text" value="<%= image.description %>" name="description">
     </div>
   </div>
-
   <input type="hidden" name="_method" value="PUT">
-
-  <button class="button is-link">Save</button>
+  <button class="button is-link is-fullwidth">Save</button>
 </form>

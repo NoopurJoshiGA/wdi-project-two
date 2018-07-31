@@ -26,6 +26,10 @@ img:hover {
 
 img.profilePic {
     border-radius: 50%;
-    border: 5px grey solid;
     height: 150px;
-  }
+}
+
+.profilePicSmall {
+  border-radius: 50%;
+  height: 64px;
+}
