@@ -1,7 +1,9 @@
 
 <h2 class="title is-2">Edit Profile</h2>
 <% if (locals.isLoggedIn) { %>
+  <figure class="image editProfilePic">
   <img src="<%= user.imageUrl %>">
+  </figure>
   <% } %>
 
 <form method="POST" action="/users/<%=user.id%>">

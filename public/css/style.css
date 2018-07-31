@@ -34,6 +34,13 @@ img.profilePic {
   height: 64px;
 }
 
+.editProfilePic {
+  border-radius: 50%;
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
 .instagramLogo {
   width: 300px;
   height: auto;
@@ -51,4 +58,8 @@ footer {
 
 .registrationMessage {
   padding: 1rem;
+}
+
+.imageBoard {
+  padding: 2px;
 }
