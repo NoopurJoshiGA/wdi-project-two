@@ -6,12 +6,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Roboto" rel="stylesheet">
 </head>
 <body class="is-light">
 
 
   <% include ./partials/_header %>
-
 
   <div class="container">
     <% for (const type in locals.messages) { %>
@@ -21,12 +23,13 @@
         </div>
       </div>
       <% } %>
+    </div>
 
-      <div class="section">
+<div class="section">
         <%- body %>
       </div>
-    </div>
-    
+
+
     <% include ./partials/_footer %>
 
   </body>

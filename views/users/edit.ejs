@@ -1,4 +1,3 @@
-
 <h2 class="title is-2">Edit Profile</h2>
 <% if (locals.isLoggedIn) { %>
   <figure class="image editProfilePic">
@@ -45,9 +44,8 @@
     </div>
     <input type="hidden" name="_method" value="PUT">
     <button class="button is-link is-fullwidth">Save</button>
-    <p><%= user.id %></p>
   </form>
-  
+
   <form class="" action="/users/<%= user.id %>" method="POST">
     <button class="button deleteAccountBtn is-fullwidth is-warning">Delete Account</button>
     <input type="hidden" name="_method" value="DELETE">
