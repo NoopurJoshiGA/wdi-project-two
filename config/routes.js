@@ -28,7 +28,10 @@ function secureRoute(req, res, next) {
 // Tells Express where to find the pages
 router.get('/', (req, res) => res.render('pages/_home'));
 router.get('/index', (req, res) => res.render('pages/_index'));
+
 // router.get('/editProfile', (req, res) => res.render('images/editProfile'));
+router.get('/sessions', (req, res) => res.render('sessions/new'));
+router.get('/registrations', (req, res) => res.render('registrations/new'));
 
 router.route('/registrations/new')
   .get(registrationController.new);
@@ -46,16 +49,19 @@ router.route('/sessions')
 router.route('/sessions/delete')
   .get(sessionController.delete);
 
+// ORDER MATTERS
+router.route('/users/index')
+  .get(userController.index);
+
 // Show User Profile
 // Each User has their own User ID
 router.route('/users/:id')
-  .get(userController.show);
+  .get(secureRoute, userController.show)
+  .put(secureRoute, userController.update)
+  .delete(secureRoute, userController.delete);
 
 router.route('/users/:id/edit')
   .get(secureRoute, userController.edit);
-
-router.route('/users/:id')
-  .put(userController.update);
 
 router.route('/images/new')
   .get(secureRoute, imageController.new);
@@ -63,11 +69,6 @@ router.route('/images/new')
 router.route('/images')
   // .get(imageController.index)
   .post(imageController.create);
-
-// router.route('/images')
-//   .get(imageController.index)
-//   .post(imageController.create);
-
 
 router.route('/images/:id')
   .get(imageController.show)
@@ -89,11 +90,12 @@ router.route('/images/:imageId/')
 router.route('/images/:imageId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
 
+
+
 // router.get('/profile', (req, res) => res.render('images/index'));
 
 // router.get('/followers', (req, res) => res.render('pages/_followers'));
 // router.get('/newComment', (req, res) => res.render('pages/_newComment'));
-
 
 //Export Router
 module.exports = router;

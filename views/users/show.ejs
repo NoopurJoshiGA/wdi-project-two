@@ -36,12 +36,12 @@
   </div>
   </div>
   <div class="columns is-gapless is-multiline is-mobile">
-    <%# TODO: add a userSchema.methods.createdImages(). The model should fetch its own images! %>
     <% photos.forEach(image => { %>
       <div class="column is-one-third-mobile is-one-third-tablet is-one-third-desktop">
       <a href="/images/<%= image.id %>">
       <figure class="image imageBoard is-square">
       <img class="imageBoard" src=<%= image.image %> >
+      <i class="fas fa-heart"></i>
       </figure>
       </a>
       </div>

@@ -20,7 +20,7 @@ img {
 }
 
 img:hover {
-  background-color: red;
+
 }
 
 
@@ -62,4 +62,23 @@ footer {
 
 .imageBoard {
   padding: 2px;
+}
+
+.imageBoard:hover {
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+
+.fa-heart {
+  color: white;
+  display: none;
+}
+
+.fa-user, .fa-users {
+  font-size: 2rem;
+}
+
+.deleteAccountBtn {
+  margin-top: 80px;
 }

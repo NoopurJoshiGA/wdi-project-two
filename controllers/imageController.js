@@ -1,4 +1,5 @@
 const Image = require('../models/image');
+const User = require('../models/image');
 
 
 // Upload a new image and render the form
@@ -16,22 +17,10 @@ function imagesCreate(req, res) {
     .create(req.body)
     .then(image => {
       console.log('Uploading image...', image);
-      // TODO: REDIRECT TO THE USERS PROFILE PAGE RATHER THAN HOME PAGE
-      res.redirect('/index');
+      res.redirect(`/users/${res.locals.user._id}`);
     })
     .catch(err => res.status(500).send(err));
 }
-
-// Function to display all images in your profile page
-// function imagesIndex(req, res) {
-//   Image
-//     .find()
-//     .populate('createdBy')
-//     .then(images => {
-//       console.log('images index');
-//       res.render('users/', { images });
-//     });
-// }
 
 function imagesShow(req, res) {
   const imageId = req.params.id;
@@ -48,17 +37,17 @@ function imagesEdit(req, res) {
 }
 
 function imagesUpdate(req, res) {
-  //you want to use Album because that's the Model and you need it whenever you wanna make changes to the db
+  //you want to use Image because that's the Model and you need it whenever you wanna make changes to the db
   Image
     .findByIdAndUpdate(req.params.id, req.body)
-    .then(image => res.redirect(`/images/${image.id}`))
+    .then(() => res.redirect('/index'))
     .catch(err => res.status(500).send(err));
 }
 
 function imagesDelete(req, res) {
   Image
     .findByIdAndDelete(req.params.id)
-    .then(() => res.redirect('/index'))
+    .then(() => res.redirect('/users/user.id'))
     .catch(err => res.status(404).send(err));
 }
 

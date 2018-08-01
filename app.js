@@ -82,7 +82,7 @@ app.use((req, res, next) => {
     // Get User from DB
     // Make it available on req
     .then(user => {
-      res.locals.user = user; //res.locals is always passed to the view engine
+      res.locals.loggedInUser = user; //res.locals is always passed to the view engine
       res.locals.isLoggedIn = true;
       next();
     });

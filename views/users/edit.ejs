@@ -6,43 +6,50 @@
   </figure>
   <% } %>
 
-<form method="POST" action="/users/<%=user.id%>">
-  <div class="field">
-    <label class="label" for="imageUrl">Profile Picture</label>
-    <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= user.imageUrl %>" name="imageUrl">
+  <form method="POST" action="/users/<%=user.id%>">
+    <div class="field">
+      <label class="label" for="imageUrl">Profile Picture</label>
+      <div class="control">
+        <input class="input is-fullwidth" type="text" value="<%= user.imageUrl %>" name="imageUrl">
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="fullName">Full Name</label>
-    <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= user.fullName %>" name="fullName">
+    <div class="field">
+      <label class="label" for="fullName">Full Name</label>
+      <div class="control">
+        <input class="input is-fullwidth" type="text" value="<%= user.fullName %>" name="fullName">
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="description">Description</label>
-    <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= user.description %>" name="description">
+    <div class="field">
+      <label class="label" for="description">Description</label>
+      <div class="control">
+        <input class="input is-fullwidth" type="text" value="<%= user.description %>" name="description">
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="username">Username</label>
-    <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= user.username %>" name="username">
+    <div class="field">
+      <label class="label" for="username">Username</label>
+      <div class="control">
+        <input class="input is-fullwidth" type="text" value="<%= user.username %>" name="username">
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="email">Email</label>
-    <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= user.email %>" name="email">
+    <div class="field">
+      <label class="label" for="email">Email</label>
+      <div class="control">
+        <input class="input is-fullwidth" type="text" value="<%= user.email %>" name="email">
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="password">Password</label>
-    <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= user.password %>" name="password">
+    <div class="field">
+      <label class="label" for="password">Password</label>
+      <div class="control">
+        <input class="input is-fullwidth" type="text" value="<%= user.password %>" name="password">
+      </div>
     </div>
-  </div>
-  <input type="hidden" name="_method" value="PUT">
-  <button class="button is-link is-fullwidth">Save</button>
+    <input type="hidden" name="_method" value="PUT">
+    <button class="button is-link is-fullwidth">Save</button>
+    <p><%= user.id %></p>
+  </form>
+  
+  <form class="" action="/users/<%= user.id %>" method="POST">
+    <button class="button deleteAccountBtn is-fullwidth is-warning">Delete Account</button>
+    <input type="hidden" name="_method" value="DELETE">
+  </form>
 </form>

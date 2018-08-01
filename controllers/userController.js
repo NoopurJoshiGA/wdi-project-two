@@ -31,21 +31,36 @@ function usersUpdate(req, res) {
   //you want to use Users because that's the Model and you need it whenever you wanna make changes to the db
   User
     .findByIdAndUpdate(req.params.id, req.body)
-    .then( () => res.redirect('/users/${user.id}'))
+    .then(user => res.redirect(`/users/${user.id}`))
     .catch(err => res.status(500).send(err));
 }
 
-// function userProfileDelete(req, res) {
-//   console.log('Into the user profile delete.........');
-//   Image
-//     .findByIdAndDelete(req.params.id)
-//     .then(() => res.redirect('/images'))
-//     .catch(err => res.status(404).send(err));
-// }
+function usersDelete(req, res) {
+  console.log(req.params.id);
+  User
+    .findByIdAndDelete(req.params.id)
+    .then(req.session.regenerate(() => res.redirect('/')))
+    .catch(err => res.status(404).send(err));
+}
+
+function usersIndex(req, res) {
+  //THIS IS THE MODEL - goes to mongodb to retreive albums
+  User
+  //find the Users
+    .find()
+  //then do stuff...
+    .then(users => {
+      console.log('going into the index function....', users);
+      //loads the index page and spits out albums data
+      res.render('users/index', { users });
+    });
+}
 
 module.exports = {
   show: usersShow,
   edit: usersEdit,
-  update: usersUpdate
-  // delete: userProfileDelete
+  update: usersUpdate,
+  delete: usersDelete,
+  index: usersIndex
+
 };

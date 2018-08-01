@@ -1,13 +1,13 @@
 
 <div class="container">
   <div class="columns is-multiline is-mobile">
-    <div class="column is-2">
+    <div class="column is-2-mobile is-4-desktop">
       <figure class="image is-64x64">
-        <img class="profilePicSmall" src=<%= locals.user.imageUrl %>>
+        <img class="profilePicSmall" src=<%= locals.loggedInUser.imageUrl %>>
       </figure>
     </div>
-    <div class="column is-two-thirds">
-      <p class="is-size-5 has-text-black has-text-weight-bold"><%= locals.user.username %></p>
+    <div class="column is-two-thirds-mobile">
+      <p class="is-size-5 has-text-black has-text-weight-bold"><%= locals.loggedInUser.username %></p>
       <p class="is-size-5"><i class="fas fa-map-marker-alt"></i> <%= image.location %></p>
     </div>
   </div>
@@ -27,7 +27,7 @@
     </div>
 
     <img src="<%= image.image %>" alt="user image">
-    <p> <span class="has-text-weight-bold"><%= locals.user.username %> </span>
+    <p> <span class="has-text-weight-bold"><%= locals.loggedInUser.username %> </span>
       <%= image.description %>
     </p>
 
@@ -37,7 +37,7 @@
       <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
       <%= comment.content %>
       </p>
-      <% if (locals.isLoggedIn && locals.user.username === comment.name) { %>
+      <% if (locals.isLoggedIn && locals.loggedInUser.username === comment.name) { %>
         <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <button class="tag is-delete"></button>
@@ -49,7 +49,7 @@
           <div class="field">
             <div class="control">
               <textarea class="textarea" type="text" rows="3" placeholder="Add a comment..." name="content"></textarea>
-              <input type="hidden" name="name" value="<%= locals.user.username %>">
+              <input type="hidden" name="name" value="<%= locals.loggedInUser.username %>">
             </div>
           </div>
           <button class="button is-link is-fullwidth">Add</button>
