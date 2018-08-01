@@ -1,12 +1,14 @@
 
 <div class="container">
   <div class="columns is-multiline is-mobile">
-    <div class="column is-one-third ">
+    <div class="column is-one-quarter-desktop">
       <img class="profilePic" src="<%= user.imageUrl %>">
     </div>
-    <div class="column is-two-thirds">
+    <div class="column">
       <h1 class="is-size-2 has-text-black"><%= user.username %></h1>
-      <a href="/users/<%=user.id %>/edit" class="button is-medium">Edit Profile</a>
+      <% if(locals.loggedInUser.id === user.id && locals.isLoggedIn) { %>
+        <a href="/users/<%=user.id %>/edit" class="button is-medium">Edit Profile</a>
+      <% } %>
     </div>
   </div>
   <div class="columns is-mobile">

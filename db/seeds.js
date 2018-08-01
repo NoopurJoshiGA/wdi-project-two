@@ -9,9 +9,6 @@ const User = require('../models/user');
 Image.collection.drop();
 User.collection.drop();
 
-
-
-
 User
   .create([
     {
@@ -57,24 +54,52 @@ User
     return Image
       .create([
         {
-          image: 'https://images.pexels.com/photos/572738/pexels-photo-572738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-          location: 'Japan',
-          description: 'Sakura Season',
-          comments: [
-            { name: 'Rob', content: 'Wow! This is ❤️!!'}
-          ],
-          likes: 1000,
+          image: 'https://images.pexels.com/photos/878352/pexels-photo-878352.jpeg?cs=srgb&dl=clouds-crater-lake-daylight-878352.jpg&fm=jpg',
+          location: 'Thailand',
+          description: 'I love diving!',
+          comments: [],
+          likes: 107,
           createdBy: users[0].id
         },
         {
-          image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?cs=srgb&dl=art-blur-cappuccino-302899.jpg&fm=jpg',
-          location: 'Watford',
-          description: 'Sakura Season',
-          comments: [
-            { name: 'Rob', content: 'Wow! This is ❤️!!'}
-          ],
-          likes: 1000,
-          createdBy: users[1].id
+          image: 'https://images.pexels.com/photos/734725/pexels-photo-734725.jpeg?cs=srgb&dl=divers-diving-enjoyment-734725.jpg&fm=jpg',
+          location: 'Thailand',
+          description: 'Diving is life',
+          comments: [],
+          likes: 53,
+          createdBy: users[0].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/163313/diving-zakynthos-holidays-summer-holiday-163313.jpeg?cs=srgb&dl=diver-diving-exploration-163313.jpg&fm=jpg',
+          location: 'Thailand',
+          description: 'My 10m dive',
+          comments: [],
+          likes: 53,
+          createdBy: users[0].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/37530/divers-scuba-divers-diving-underwater-37530.jpeg?cs=srgb&dl=deep-diver-diving-suit-37530.jpg&fm=jpg',
+          location: 'Thailand',
+          description: 'Diving is life',
+          comments: [],
+          likes: 53,
+          createdBy: users[0].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/10467/pexels-photo-10467.jpeg?cs=srgb&dl=animal-diving-reptile-10467.jpg&fm=jpg',
+          location: 'Thailand',
+          description: 'Diving is life',
+          comments: [],
+          likes: 53,
+          createdBy: users[0].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/734725/pexels-photo-734725.jpeg?cs=srgb&dl=divers-diving-enjoyment-734725.jpg&fm=jpg',
+          location: 'Thailand',
+          description: 'Diving is life',
+          comments: [],
+          likes: 53,
+          createdBy: users[0].id
         }
       ]);
   })

@@ -82,3 +82,29 @@ footer {
 .deleteAccountBtn {
   margin-top: 80px;
 }
+
+.usersOnInstagram {
+  border-radius: 50%;
+  max-width: 200px;
+  width: 100%;
+}
+
+.message-body {
+  margin-top: 50px;
+}
+
+.alignTextCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.user {
+  border-top: 1px solid #dfdfdf;
+  /* border-bottom: 1px solid #dfdfdf; */
+  /* margin: 10px 0 10px 0; */
+}
+
+.user:last-child {
+  border-bottom: 1px solid #dfdfdf; */
+}

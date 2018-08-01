@@ -12,6 +12,10 @@ const commentController = require('../controllers/commentController');
 const userController = require('../controllers/userController');
 
 function secureRoute(req, res, next) {
+  if(req.method.toUpperCase() !== 'GET' && req.params.id !== req.session.userId) {
+    req.flash('danger', 'Unauthorised!');
+    return res.redirect(req.headers.referer);
+  }
   //if your middleware is always going to end then don't need next.
   //If the middleware aint going anywhere then you need next
   if(!req.session.userId) {
@@ -51,7 +55,7 @@ router.route('/sessions/delete')
 
 // ORDER MATTERS
 router.route('/users/index')
-  .get(userController.index);
+  .get(secureRoute, userController.index);
 
 // Show User Profile
 // Each User has their own User ID
