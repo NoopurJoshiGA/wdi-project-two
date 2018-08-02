@@ -9,6 +9,7 @@ function sessionsNew(req, res) {
 
 
 function sessionsCreate(req, res) {
+  console.log('Sessions create', req.body.email);
   User
     .findOne({ email: req.body.email })
     .then(user => {

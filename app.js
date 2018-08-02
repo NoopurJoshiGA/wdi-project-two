@@ -1,8 +1,10 @@
 // Require Express
 const express = require('express');
-
 // Create the app by invoking the express module
 const app = express();
+// Import environment
+const { port, dbURI } = require('./config/environment');
+
 
 // Tell Express to use express-ejs-layouts
 const expressLayouts = require('express-ejs-layouts');
@@ -18,9 +20,7 @@ const mongoose = require('mongoose');
 // Mongoose will return a promise when we make a database request
 const Promise = require('bluebird');
 mongoose.Promise = Promise;
-
-// Import environment
-const { PORT } = require('./config/environment');
+mongoose.connect(dbURI);
 
 // Require Models
 const User = require('./models/user');
@@ -92,4 +92,4 @@ app.use(router);
 // const multer = require('multer');
 
 // Listen app is running on port 8000
-app.listen(PORT, () => console.log(`Up and running on port ${PORT}`));
+app.listen(port, () => console.log(`Up and running on port ${port}`));
