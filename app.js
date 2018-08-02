@@ -20,7 +20,7 @@ const Promise = require('bluebird');
 mongoose.Promise = Promise;
 
 // Import environment
-const { PORT } = require('../config/environment');
+const { PORT } = require('./config/environment');
 
 // Require Models
 const User = require('./models/user');
