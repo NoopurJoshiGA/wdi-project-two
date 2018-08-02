@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 // mongoose.connect('mongodb://localhost/instagramUsers');
 
-const {DB_URI} = require('./config/environment');
+const {DB_URI} = require('../config/environment');
 mongoose.connect(DB_URI);
 
 // Models
