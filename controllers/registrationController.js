@@ -11,7 +11,7 @@ function registrationsCreate(req, res) {
     .then(user => {
       console.log(user);
       console.log('We have created a user wooo', user);
-      res.redirect('/index');
+      res.redirect('/sessions/new');
     })
     .catch(err => {
       console.log(err);
