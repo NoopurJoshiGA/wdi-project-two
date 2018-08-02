@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 // mongoose.connect('mongodb://localhost/instagramUsers');
 
-const {DB_URI} = require('../config/environment');
-mongoose.connect(DB_URI);
+const {dbURI} = require('../config/environment');
+mongoose.connect(dbURI);
 
 // Models
 const Image = require('../models/image');
