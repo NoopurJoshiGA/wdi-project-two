@@ -6,38 +6,42 @@
   <h2 class="has-text-centered is-size-5">Sign up to see photos and videos from your friends</h2>
 </div>
 
-<form action="/registrations" method="POST">
-  <div class="field">
-    <div class="control">
-      <input class="input" type="text" placeholder="Full Name" name="fullName">
-    </div>
+<div class="columns is-multiline is-mobile">
+  <div class="column is-12-mobile is-half-desktop registrationForm">
+    <form action="/registrations" method="POST">
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" placeholder="Full Name" name="fullName">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" placeholder="Username" name="username">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="email" placeholder="Email" name="email">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="password" placeholder="Password" name="password">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input name="passwordConfirmation" placeholder="Confirm Password" class="input" type="password">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-link is-fullwidth has-text-centered">Sign Up</button>
+        </div>
+        <div class="section">
+          <p class="has-text-centered">Already have an account? Log in <a href="/sessions/new">here</a></p>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="field">
-    <div class="control">
-      <input class="input" type="text" placeholder="Username" name="username">
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <input class="input" type="email" placeholder="Email" name="email">
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <input class="input" type="password" placeholder="Password" name="password">
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <input name="passwordConfirmation" placeholder="Confirm Password" class="input" type="password">
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <button class="button is-link is-fullwidth has-text-centered">Sign Up</button>
-    </div>
-    <div class="section">
-      <p class="has-text-centered">Already have an account? Log in <a href="/sessions/new">here</a></p>
-    </div>
-  </div>
-</form>
+</div>

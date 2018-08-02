@@ -12,7 +12,7 @@ const commentController = require('../controllers/commentController');
 const userController = require('../controllers/userController');
 
 function secureRoute(req, res, next) {
-  if(req.method.toUpperCase() !== 'GET' && req.params.id !== req.session.userId) {
+  if(req.method.toUpperCase() !== 'GET' && req.params.id && req.params.id !== req.session.userId) {
     req.flash('danger', 'Unauthorised!');
     return res.redirect(req.headers.referer);
   }
@@ -30,11 +30,10 @@ function secureRoute(req, res, next) {
 
 // Becomes an Express Router
 // Tells Express where to find the pages
-router.get('/', (req, res) => res.render('pages/_home'));
 router.get('/index', (req, res) => res.render('pages/_index'));
 
 // router.get('/editProfile', (req, res) => res.render('images/editProfile'));
-router.get('/sessions', (req, res) => res.render('sessions/new'));
+router.get('/', (req, res) => res.render('sessions/new'));
 router.get('/registrations', (req, res) => res.render('registrations/new'));
 
 router.route('/registrations/new')
@@ -93,13 +92,6 @@ router.route('/images/:imageId/')
 
 router.route('/images/:imageId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
-
-
-
-// router.get('/profile', (req, res) => res.render('images/index'));
-
-// router.get('/followers', (req, res) => res.render('pages/_followers'));
-// router.get('/newComment', (req, res) => res.render('pages/_newComment'));
 
 //Export Router
 module.exports = router;

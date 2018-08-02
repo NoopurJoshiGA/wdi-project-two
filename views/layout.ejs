@@ -12,23 +12,21 @@
 </head>
 <body class="is-light">
 
-
   <% include ./partials/_header %>
 
   <div class="container">
     <% for (const type in locals.messages) { %>
-      <div class="message is-<%= type %>">
-        <div class="message-body">
+      <div class="message is-<%= type %>" id="message">
+        <div class="message-body" id="message-body">
           <%= messages[type] %>
         </div>
       </div>
       <% } %>
     </div>
 
-<div class="section">
-        <%- body %>
-      </div>
-
+    <div class="section">
+      <%- body %>
+    </div>
 
     <% include ./partials/_footer %>
 

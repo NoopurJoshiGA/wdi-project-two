@@ -10,14 +10,15 @@ function imagesNew(req, res) {
 // Function to upload the picture and redirect you back to your profile
 function imagesCreate(req, res) {
   console.log('this is req.body before we add res =>', req.body);
-  console.log('res.locals.user._id =>', res.locals.user._id);
-  req.body.createdBy = res.locals.user._id;
+  console.log('LOGGED IN USER  =>', res.locals.loggedInUser._id);
+  console.log('res.body =>', res.body);
+  req.body.createdBy = res.locals.loggedInUser._id;
   console.log('this is req.body =>', req.body);
   Image
     .create(req.body)
     .then(image => {
       console.log('Uploading image...', image);
-      res.redirect(`/users/${res.locals.user._id}`);
+      res.redirect(`/users/${res.locals.loggedInUser._id}`);
     })
     .catch(err => res.status(500).send(err));
 }
@@ -26,6 +27,7 @@ function imagesShow(req, res) {
   const imageId = req.params.id;
   Image
     .findById(imageId)
+    .populate('createdBy')
     .then(image => res.render('images/show', { image }));
 }
 
@@ -47,9 +49,18 @@ function imagesUpdate(req, res) {
 function imagesDelete(req, res) {
   Image
     .findByIdAndDelete(req.params.id)
-    .then(() => res.redirect('/users/user.id'))
+    .then(() => res.redirect(`/users/${res.locals.loggedInUser._id}`))
     .catch(err => res.status(404).send(err));
 }
+
+// function imagesIndex(req, res) {
+//   console.log('into the images index....');
+//   Image
+//   // Find all images
+//     .find()
+//     .then(image => res.render('images/index', { image }));
+//     .catch(err => res.status(404).send(err));
+// }
 
 module.exports = {
   new: imagesNew,

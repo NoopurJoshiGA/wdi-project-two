@@ -10,7 +10,6 @@ body {
  box-shadow:0px 1px 1px #cbcbcb;
 }
 
-
 img {
   padding: 0;
   margin: 0;
@@ -19,7 +18,6 @@ img {
 img:hover {
 
 }
-
 
 img.profilePic {
   border-radius: 50%;
@@ -97,10 +95,24 @@ footer {
   width: 100%;
 }
 
+.usersOnInstagramText {
+  padding: 10px;
+}
+
 .message-body {
   margin-top: 50px;
   margin-bottom: 50px;
   text-align: center;
+}
+
+#message {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#message-body {
+  
 }
 
 .alignTextCenter {
@@ -137,4 +149,17 @@ footer {
   align-items: center;
   text-align: center;
   margin: 0 auto;
+}
+
+
+/* LOGIN AND REGISTRATION FORM */
+.loginForm, .registrationForm {
+  height: 50vh;
+  margin: 0 auto;
+}
+
+.levelStyle {
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 4px;
 }

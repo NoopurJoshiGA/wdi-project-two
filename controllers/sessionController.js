@@ -12,6 +12,7 @@ function sessionsCreate(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
+      console.log('We are in sessions create and user is', user);
       if(!user || !user.validatePassword(req.body.password)) {
         res.status(401).render('sessions/new', { message: 'Try that again'});
       }

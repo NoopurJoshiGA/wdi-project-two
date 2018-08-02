@@ -3,18 +3,18 @@
   <div class="columns is-multiline is-mobile">
     <div class="column is-2-mobile is-4-desktop">
       <figure class="image is-64x64">
-        <img class="profilePicSmall" src=<%= locals.loggedInUser.imageUrl %>>
+        <img class="profilePicSmall" src=<%= image.createdBy.imageUrl %>>
       </figure>
     </div>
     <div class="column is-two-thirds-mobile">
-      <p class="is-size-5 has-text-black has-text-weight-bold"><%= locals.loggedInUser.username %></p>
+      <p class="is-size-5 has-text-black has-text-weight-bold"><%= image.createdBy.username %></p>
       <p class="is-size-5"><i class="fas fa-map-marker-alt"></i> <%= image.location %></p>
     </div>
   </div>
 
   <div class="level is-mobile">
     <div class="level-left">
-      <% if (locals.isLoggedIn) { %>
+      <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
         <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
         <form class="" action="/images/<%= image.id %>" method="POST">
         </div>
@@ -27,10 +27,8 @@
     </div>
 
     <img src="<%= image.image %>" alt="user image">
-    <p> <span class="has-text-weight-bold"><%= locals.loggedInUser.username %> </span>
-      <%= image.description %>
-    </p>
-
+    <p><span class="has-text-weight-bold"><%= image.createdBy.username %></span></p>
+    <p class="imageDescription"><%= image.description %> </p>
     <hr>
 
     <% image.comments.forEach(comment => { %>
