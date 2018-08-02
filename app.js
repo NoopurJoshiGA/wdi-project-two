@@ -19,8 +19,8 @@ const mongoose = require('mongoose');
 const Promise = require('bluebird');
 mongoose.Promise = Promise;
 
-// Connect to the instagramUsers database
-mongoose.connect('mongodb://localhost/instagramUsers');
+// Import environment
+const { PORT } = require('../config/environment');
 
 // Require Models
 const User = require('./models/user');
@@ -38,9 +38,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Require Method Override
 const methodOverride = require('method-override');
-
-//8000 is Localhost
-const PORT = 8000;
 
 //Tell Express to look for static files in the public folder
 app.use(express.static(`${__dirname}/public`));
@@ -93,10 +90,6 @@ const router = require('./config/routes');
 app.use(router);
 
 // const multer = require('multer');
-
-
-
-
 
 // Listen app is running on port 8000
 app.listen(PORT, () => console.log(`Up and running on port ${PORT}`));
