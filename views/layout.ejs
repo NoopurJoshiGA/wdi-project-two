@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="/css/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script type="text/javascript" src="/node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js"></script>
 </head>
 <body class="is-light">
 
@@ -16,8 +18,8 @@
 
   <div class="container">
     <% for (const type in locals.messages) { %>
-      <div class="message is-<%= type %>" id="message">
-        <div class="message-body" id="message-body">
+      <div class="message is-<%= type %>">
+        <div class="message-body">
           <%= messages[type] %>
         </div>
       </div>
@@ -30,5 +32,8 @@
 
     <% include ./partials/_footer %>
 
+    <script>
+    var carousels = bulmaCarousel.attach(); // carousels now contains an array of all Carousel instances
+    </script>
   </body>
   </html>

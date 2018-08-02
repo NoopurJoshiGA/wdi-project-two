@@ -100,6 +100,38 @@ User
           comments: [],
           likes: 53,
           createdBy: users[0].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/161784/landscape-thor-s-hammer-bryce-canyon-national-park-161784.jpeg?cs=srgb&dl=amphitheater-balance-bryce-canyon-161784.jpg&fm=jpg',
+          location: 'Nevada',
+          description: 'Rocks are life',
+          comments: [],
+          likes: 4,
+          createdBy: users[1].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/531525/pexels-photo-531525.jpeg?cs=srgb&dl=bryce-canyon-canyon-cliff-531525.jpg&fm=jpg',
+          location: 'Utah',
+          description: 'Bryce Canyon',
+          comments: [],
+          likes: 38,
+          createdBy: users[1].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/545964/pexels-photo-545964.jpeg?cs=srgb&dl=blue-sky-canyon-cliff-545964.jpg&fm=jpg',
+          location: 'Nevada',
+          description: 'Canyon Cliff',
+          comments: [],
+          likes: 47,
+          createdBy: users[1].id
+        },
+        {
+          image: 'https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          location: 'Nevada',
+          description: 'Rocks are life',
+          comments: [],
+          likes: 4,
+          createdBy: users[1].id
         }
       ]);
   })

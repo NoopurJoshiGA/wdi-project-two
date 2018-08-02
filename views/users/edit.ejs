@@ -1,10 +1,11 @@
-<h2 class="title is-2">Edit Profile</h2>
 <% if (locals.isLoggedIn) { %>
   <figure class="image editProfilePic">
   <img src="<%= user.imageUrl %>">
   </figure>
   <% } %>
 
+<div class="container mainContainer">
+  <h2 class="title is-2">Edit Profile</h2>
   <form method="POST" action="/users/<%=user.id%>">
     <div class="field">
       <label class="label" for="imageUrl">Profile Picture</label>
@@ -36,12 +37,6 @@
         <input class="input is-fullwidth" type="text" value="<%= user.email %>" name="email">
       </div>
     </div>
-    <div class="field">
-      <label class="label" for="password">Password</label>
-      <div class="control">
-        <input class="input is-fullwidth" type="text" value="<%= user.password %>" name="password">
-      </div>
-    </div>
     <input type="hidden" name="_method" value="PUT">
     <button class="button is-link is-fullwidth">Save</button>
   </form>
@@ -51,3 +46,4 @@
     <input type="hidden" name="_method" value="DELETE">
   </form>
 </form>
+</div>

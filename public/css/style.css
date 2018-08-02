@@ -112,7 +112,7 @@ footer {
 }
 
 #message-body {
-  
+
 }
 
 .alignTextCenter {
@@ -134,15 +134,33 @@ footer {
 
 .heroStyle {
   padding: 0;
-  background-image: url('https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?cs=srgb&dl=blur-business-card-185933.jpg&fm=jpg');
+  background-image: url('https://images.pexels.com/photos/567631/pexels-photo-567631.jpeg?cs=srgb&dl=adventure-attraction-blur-567631.jpg&fm=jpg');
   background-size: cover;
   height: 100vh;
   padding: 0;
 }
 
 .heroTitle {
-  padding: 50px;
-  font-family: 'Anton', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 100px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 4rem;
+}
+
+#uploadImageBtn {
+  margin-top: 50px;
+  animation-delay: 3s;
+}
+
+.indexPage {
+  text-align: center;
+}
+
+#heroTitleAnimation {
+-webkit-animation-duration: 3s;
+-moz-animation-duration: 3s;
+-ms-transition-animation-duration: 3s;
 }
 
 .profilePicColumn {
