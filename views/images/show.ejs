@@ -14,6 +14,7 @@
 
   <div class="level is-mobile">
     <div class="level-left">
+      <%# Show image if the it belongs to current logged in user  %>
       <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
         <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
         <form class="" action="/images/<%= image.id %>" method="POST">

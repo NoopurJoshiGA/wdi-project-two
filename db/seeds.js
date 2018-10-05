@@ -77,7 +77,7 @@ User
           location: 'Thailand',
           description: 'My 10m dive',
           comments: [],
-          likes: 53,
+          likes: 193,
           createdBy: users[0].id
         },
         {
@@ -85,7 +85,7 @@ User
           location: 'Thailand',
           description: 'Diving is life',
           comments: [],
-          likes: 53,
+          likes: 57,
           createdBy: users[0].id
         },
         {
@@ -93,7 +93,7 @@ User
           location: 'Thailand',
           description: 'Diving is life',
           comments: [],
-          likes: 53,
+          likes: 64,
           createdBy: users[0].id
         },
         {
@@ -101,7 +101,7 @@ User
           location: 'Thailand',
           description: 'Diving is life',
           comments: [],
-          likes: 53,
+          likes: 392,
           createdBy: users[0].id
         },
         {
@@ -109,7 +109,7 @@ User
           location: 'Nevada',
           description: 'Rocks are life',
           comments: [],
-          likes: 4,
+          likes: 23,
           createdBy: users[1].id
         },
         {
@@ -117,7 +117,7 @@ User
           location: 'Utah',
           description: 'Bryce Canyon',
           comments: [],
-          likes: 38,
+          likes: 600,
           createdBy: users[1].id
         },
         {
@@ -125,7 +125,7 @@ User
           location: 'Nevada',
           description: 'Canyon Cliff',
           comments: [],
-          likes: 47,
+          likes: 192,
           createdBy: users[1].id
         },
         {
@@ -133,7 +133,7 @@ User
           location: 'Nevada',
           description: 'Rocks are life',
           comments: [],
-          likes: 4,
+          likes: 48,
           createdBy: users[1].id
         }
       ]);

@@ -6,20 +6,25 @@
       <a class="navbar-item">|</a>
       <a class="navbar-item" href="/index"><img src="/instalogo.png" alt="Instagram Text Logo"></a>
     </div>
+    <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
     <% if (!locals.isLoggedIn) { %>
       <a class="navbar-item" href="/sessions/new">Log In</a>
       <a class="navbar-item" href="/registrations/new">Sign Up</a>
       <% } else { %>
-      <div class="navbar-menu is-active">
-      <div class="navbar-end">
-      <a class='navbar-item' href="/users/index"><i class="fas fa-users"></i></a>
-      <a class="navbar-item" href="/sessions/delete">Log out <%= locals.loggedInUser.fullName %></a>
-      <a class="navbar-item" href="/images/new">Upload Image</a>
-      <a class='navbar-item' href="/users/<%=locals.loggedInUser.id%>"><i class="fas fa-user"></i></a>
-      <%  } %>
+        <div class="navbar-menu is-active" id="navMenu">
+        <div class="navbar-end">
+        <a class='navbar-item' href="/users/index"><i class="fas fa-users"></i></a>
+        <a class="navbar-item" href="/sessions/delete">Log out <%= locals.loggedInUser.fullName %></a>
+        <a class="navbar-item" href="/images/new">Upload Image</a>
+        <a class='navbar-item' href="/users/<%=locals.loggedInUser.id%>"><i class="fas fa-user"></i></a>
+        <%  } %>
+      </div>
     </div>
   </div>
-</div>
 </div>
 </div>
 </nav>
