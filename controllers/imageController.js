@@ -1,7 +1,6 @@
 const Image = require('../models/image');
 const User = require('../models/image');
 
-
 // Upload a new image and render the form
 function imagesNew(req, res) {
   res.render('images/new');

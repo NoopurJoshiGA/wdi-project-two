@@ -10,7 +10,7 @@ function registrationsCreate(req, res) {
     .create(req.body)
     .then(user => {
       console.log(user);
-      console.log('We have created a user wooo', user);
+      console.log('We have created a user', user);
       res.redirect('/sessions/new');
     })
     .catch(err => {
@@ -23,7 +23,6 @@ function registrationsCreate(req, res) {
     }
     );
 }
-
 
 module.exports = {
   new: registrationsNew,

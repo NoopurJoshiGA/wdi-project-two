@@ -1,12 +1,9 @@
-//TODO: Add password hashing and validation
-
 const User = require('../models/user');
 
 function sessionsNew(req, res) {
   // Render the form
   res.render('sessions/new');
 }
-
 
 function sessionsCreate(req, res) {
   console.log('Sessions create', req.body.email);
@@ -23,8 +20,6 @@ function sessionsCreate(req, res) {
       res.redirect('/index');
     });
 }
-
-
 
 // Function to display information in your profile page
 function sessionsIndex(req, res) {
