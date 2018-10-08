@@ -4,6 +4,8 @@
 <img src="public/readmeimages/desktop.png" alt="instagram application" width="600px">
 <img src="public/readmeimages/mobile.png" alt="instagram application" width="200px">
 
+Link to project - https://noops-instagram.herokuapp.com/
+
 ## Technical Requirements
 - Have at least 2 models – one representing a user and one that represents the main resource of your app.
 - Incude relationships - embedded or referenced. Make sure you take the time to consider the best approach before building out your models.
