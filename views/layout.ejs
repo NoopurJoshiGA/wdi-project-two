@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton|Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <!-- <script type="text/javascript" src="/node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js"></script> -->
+  <link type="text/javascript" src="/bulma-carousel.min.js"></script>
+  <link rel="stylesheet" href="/bulma-carousel.min.css">
 </head>
 <body class="is-light">
 
@@ -34,6 +37,12 @@
   </body>
 
 
+  <script type="javascript">
+  $(document).ready(function(){
+    const carousels = bulmaCarousel.attach(); // carousels now contains an array of all Carousel instances
+  });
+  </script>
+
   <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
@@ -54,4 +63,5 @@
     }
   });
   </script>
+
   </html>

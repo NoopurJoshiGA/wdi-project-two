@@ -3,8 +3,16 @@
   <img src="/instalogo.png" alt="instagram logo">
 </figure>
 
+<% if(locals.message) { %>
+  <div class="message is-danger has-text-centered">
+  <div class="message-body">
+  <%= message %>
+  </div>
+  </div>
+  <% } %>
 
   <h2 class="has-text-centered is-size-5">Sign up to see photos and videos from your friends</h2>
+
 
 
 <div class="columns is-multiline is-mobile">

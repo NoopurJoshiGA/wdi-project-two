@@ -1,11 +1,12 @@
-<%# TODO: insert logo here %>
+<div class="uploadImage">
 
-<div class="container">
-  <h1 class="is-size-2">Upload an image</h1>
+<h1 class="is-size-2">Upload an image</h1>
+
 <form action="/images" method="POST">
   <div class="field">
+    <a class="button" id="pickImage">Pick an image</a>
     <div class="control">
-      <input class="input is-fullwidth" type="text" placeholder="Image URL" name="image">
+      <input id="imageURL" class="input" type="text" name="image" placeholder="Image URL">
     </div>
   </div>
   <div class="field">
@@ -25,3 +26,15 @@
   </div>
 </form>
 </div>
+
+<script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
+<script>
+const client = filestack.init('A53jKm6Q0GkLTlst7BB4wz');
+const btn = document.getElementById('pickImage')
+btn.addEventListener('click', function () {
+  client.pick({})
+  .then(function(data) {
+    document.getElementById('imageURL').value = data.filesUploaded[0].url;
+  })
+});
+</script>
