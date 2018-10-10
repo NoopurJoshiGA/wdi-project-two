@@ -8,10 +8,10 @@ function registrationsNew(req, res) {
 function registrationsCreate(req, res) {
   User
     .create(req.body)
-    .then(user => {
-      console.log(user);
-      console.log('We have created a user', user);
-      res.redirect('/sessions/new');
+    .then((user) => {
+      console.log('user created', user);
+      req.session.userId = user.id;
+      res.redirect('/index');
     })
     .catch(err => {
       console.log(err);
