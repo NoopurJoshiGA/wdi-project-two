@@ -1,14 +1,17 @@
 <div class="container">
-  <h1 class="title is-3 has-text-centered usersOnInstagramText">Users on Instagram</h1>
+  <h2>Users on Instagram</h2>
   <% users.forEach(user => { %>
+    <a href="/users/<%= user.id %>">
     <div class="columns user is-multiline is-mobile">
-    <div class="column is-2-desktop is-2-tablet">
-    <a href="/users/<%= user.id %>"><img class="usersOnInstagram" src="<%= user.imageUrl %>"></a>
-    </div>
+
+    <div class="column is-2-desktop is-2-tablet"><img class="usersOnInstagram" src="<%= user.imageUrl %>"></div>
+
     <div class="column alignTextCenter is-10-mobile">
-    <p class="is-size-4 has-text-black"><%= user.username %></p>
-    <p class="title is-size-5"><%= user.fullName %></p>
+      <h3><%= user.username %></h3>
+      <h4><%= user.fullName %></h4>
     </div>
+
     </div>
+    </a>
     <% }) %>
-</div>
+  </div>

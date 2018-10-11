@@ -4,46 +4,61 @@
   </figure>
   <% } %>
 
-<div class="container mainContainer">
-  <h2 class="title is-2">Edit Profile</h2>
-  <form method="POST" action="/users/<%=user.id%>">
-    <div class="field">
-      <label class="label" for="imageUrl">Profile Picture</label>
-      <div class="control">
-        <input class="input is-fullwidth" type="text" value="<%= user.imageUrl %>" name="imageUrl">
+  <div class="container mainContainer">
+    <h2 class="title is-2">Edit Profile</h2>
+    <form method="POST" action="/users/<%=user.id%>">
+      <div class="field">
+        <label class="label" for="imageUrl">Profile Picture</label>
+        <a class="button" id="pickImage">Pick an image</a>
+        <div class="control">
+          <input id="imageUrl" class="input is-fullwidth" type="text" value="<%= user.imageUrl %>" name="imageUrl">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="fullName">Full Name</label>
-      <div class="control">
-        <input class="input is-fullwidth" type="text" value="<%= user.fullName %>" name="fullName">
+      <div class="field">
+        <label class="label" for="fullName">Full Name</label>
+        <div class="control">
+          <input class="input is-fullwidth" type="text" value="<%= user.fullName %>" name="fullName">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="description">Description</label>
-      <div class="control">
-        <input class="input is-fullwidth" type="text" value="<%= user.description %>" name="description">
+      <div class="field">
+        <label class="label" for="description">Description</label>
+        <div class="control">
+          <input class="input is-fullwidth" type="text" value="<%= user.description %>" name="description">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="username">Username</label>
-      <div class="control">
-        <input class="input is-fullwidth" type="text" value="<%= user.username %>" name="username">
+      <div class="field">
+        <label class="label" for="username">Username</label>
+        <div class="control">
+          <input class="input is-fullwidth" type="text" value="<%= user.username %>" name="username">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label" for="email">Email</label>
-      <div class="control">
-        <input class="input is-fullwidth" type="text" value="<%= user.email %>" name="email">
+      <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+          <input class="input is-fullwidth" type="text" value="<%= user.email %>" name="email">
+        </div>
       </div>
-    </div>
-    <input type="hidden" name="_method" value="PUT">
-    <button class="button is-link is-fullwidth">Save</button>
-  </form>
+      <input type="hidden" name="_method" value="PUT">
+      <button class="button is-link is-fullwidth">Save</button>
+    </form>
+  </div>
 
-  <form class="" action="/users/<%= user.id %>" method="POST">
-    <button class="button deleteAccountBtn is-fullwidth is-warning">Delete Account</button>
-    <input type="hidden" name="_method" value="DELETE">
-  </form>
+  <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
+  <script>
+  const client = filestack.init('A53jKm6Q0GkLTlst7BB4wz');
+  const btn = document.getElementById('pickImage')
+  btn.addEventListener('click', function () {
+    client.pick({})
+    .then(function(data) {
+      document.getElementById('imageUrl').value = data.filesUploaded[0].url;
+    })
+  });
+  </script>
+
+
+<form class="" action="/users/<%= user.id %>" method="POST">
+  <button class="button deleteAccountBtn is-fullwidth is-warning">Delete Account</button>
+  <input type="hidden" name="_method" value="DELETE">
+</form>
 </form>
 </div>

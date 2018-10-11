@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar is-white is-fullwidth" role="navigation" aria-label="main navigation">
-  <div class="container navBarContainer">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="/index"><img src="/logo.png" alt="Instagram Logo"></a>
       <a class="navbar-item">|</a>
@@ -17,10 +17,10 @@
       <% } else { %>
         <div class="navbar-menu is-active" id="navMenu">
         <div class="navbar-end">
-        <a class='navbar-item' href="/users/index"><i class="fas fa-users"></i></a>
-        <a class="navbar-item" href="/sessions/delete">Log out <%= locals.loggedInUser.fullName %></a>
+        <a class='navbar-item' href="/users/index">Explore</a>
         <a class="navbar-item" href="/images/new">Upload Image</a>
-        <a class='navbar-item' href="/users/<%=locals.loggedInUser.id%>"><i class="fas fa-user"></i></a>
+        <a class='navbar-item' href="/users/<%=locals.loggedInUser.id%>">Profile</a>
+        <a class="navbar-item" href="/sessions/delete">Log out <%= locals.loggedInUser.fullName %></a>
         <%  } %>
       </div>
     </div>
