@@ -11,12 +11,12 @@
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
-    <% if (!locals.isLoggedIn) { %>
-      <a class="navbar-item" href="/sessions/new">Log In</a>
-      <a class="navbar-item" href="/registrations/new">Sign Up</a>
-      <% } else { %>
         <div class="navbar-menu is-active" id="navMenu">
         <div class="navbar-end">
+        <% if (!locals.isLoggedIn) { %>
+          <a class="navbar-item" href="/sessions/new">Log In</a>
+          <a class="navbar-item" href="/registrations/new">Sign Up</a>
+          <% } else { %>
         <a class='navbar-item' href="/users/index">Explore</a>
         <a class="navbar-item" href="/images/new">Upload Image</a>
         <a class='navbar-item' href="/users/<%=locals.loggedInUser.id%>">Profile</a>

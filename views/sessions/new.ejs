@@ -1,27 +1,37 @@
+<div class="section">
+
+<% if(locals.message) { %>
+  <div class="message is-danger has-text-centered">
+  <div class="message-body">
+  <%= message %>
+  </div>
+  </div>
+  <% } %>
+
 <div class="container mainContainer">
   <figure class="instagramLogo">
     <img src="/instalogo.png" alt="instagram logo">
   </figure>
 
   <div class="columns is-multiline is-mobile">
-    <% if(locals.message) { %>
-      <div class="message is-danger has-text-centered">
-      <div class="message-body">
-      <%= message %>
-      </div>
-      </div>
-      <% } %>
 
       <div class="column is-12-mobile is-half-desktop loginForm">
         <form action="/sessions" method="POST">
           <div class="field">
-            <div class="control">
+              <p class="control has-icons-left">
               <input class="input" type="text" placeholder="Email" name="email">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </p>
             </div>
-          </div>
+
           <div class="field">
-            <div class="control">
+            <div class="control has-icons-left">
               <input class="input" type="password" placeholder="Password" name="password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
             </div>
           </div>
           <button class="button is-link is-fullwidth">Login</button>
@@ -32,3 +42,4 @@
       </div>
     </div>
   </div>
+</div>

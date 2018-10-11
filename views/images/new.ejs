@@ -1,10 +1,10 @@
-<div class="uploadImage">
+<div class="section">
 
-<h1 class="is-size-2">Upload an image</h1>
+<h2>Upload an image</h2>
 
-<form action="/images" method="POST">
+<form action="/images" method="POST" class="uploadImageForm">
   <div class="field">
-    <a class="button" id="pickImage">Pick an image</a>
+    <a class="button" id="uploadImageBtn">Pick an image</a>
     <div class="control">
       <input id="imageURL" class="input" type="text" name="image" placeholder="Image URL">
     </div>
@@ -30,7 +30,7 @@
 <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
 <script>
 const client = filestack.init('A53jKm6Q0GkLTlst7BB4wz');
-const btn = document.getElementById('pickImage')
+const btn = document.getElementById('uploadImageBtn')
 btn.addEventListener('click', function () {
   client.pick({})
   .then(function(data) {

@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
   background-color: #fafafa;
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ h3 {
 }
 
 h4 {
-
+font-size: 1rem;
 }
 
 h5 {
@@ -72,7 +73,7 @@ img:hover {
 
 }
 
-img.profilePic {
+.profilePic {
   border-radius: 50%;
   max-width: 200px;
   width: 100%;
@@ -183,8 +184,10 @@ img.profilePic {
 }
 
 #uploadImageBtn {
-  margin-top: 50px;
-  animation-delay: 3s;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  /* background-color: aliceblue; */
 }
 
 .indexPage {
@@ -205,8 +208,10 @@ img.profilePic {
 
 
 /* LOGIN AND REGISTRATION FORM */
-.loginForm, .registrationForm {
+.loginForm, .registrationForm, .uploadImageForm {
   height: 50vh;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
