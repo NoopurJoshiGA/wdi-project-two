@@ -1,19 +1,21 @@
 
-<div class="container mainContainer">
+<section class="section imagesShowSection">
+
   <div class="columns is-multiline is-mobile">
-    <div class="column is-2-mobile is-1-desktop">
+
+    <%# Profile pic, username & location %>
+    <div class="column is-primary is-2-mobile is-1-desktop">
       <figure class="image is-64x64">
         <img class="profilePicSmall" src=<%= image.createdBy.imageUrl %>>
       </figure>
     </div>
-    <div class="column is-two-thirds-mobile is-one-quarter-desktop">
-      <p class="is-size-5 has-text-black has-text-weight-bold"><%= image.createdBy.username %></p>
-      <p class="is-size-5"><i class="fas fa-map-marker-alt"></i> <%= image.location %></p>
+    <div class="column is-3-mobile is-4-desktop">
+      <h5><%= image.createdBy.username %></h5>
+      <h6><i class="fas fa-map-marker-alt"></i> <%= image.location %></h6>
     </div>
   </div>
 
-  <div class="level is-mobile">
-    <div class="level-left">
+
       <%# Show image if the it belongs to current logged in user  %>
       <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
         <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
@@ -24,18 +26,16 @@
         <input type="hidden" name="_method" value="DELETE">
         </form>
         <% } %>
-      </div>
-    </div>
 
     <div class="columns is-mobile is-multiline">
       <div class="column is-half-desktop is-full-mobile">
         <img src="<%= image.image %>" alt="user image">
       </div>
       <div class="column is-half-desktop is-full-mobile">
-        <p><span class="has-text-weight-bold"><%= image.createdBy.username %></span></p>
-        <p class="imageDescription"><%= image.description %> </p>
+        <h5><%= image.createdBy.username %></h5>
+        <h6><%= image.description %> </h6>
         <hr>
-        <h1>Comments</h1>
+        <h5>Comments</h5>
         <div class="level is-mobile">
           <div class="level-left">
             <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
@@ -50,9 +50,8 @@
             </div>
           </div>
           <% image.comments.forEach(comment => { %>
-            <p><span class="commenter has-text-weight-bold"><%= comment.name %></span>
-            <%= comment.content %>
-            </p>
+            <h5><%= comment.name %></h5>
+            <h6 class="commentContent"><%= comment.content %></h6>
             <% if (locals.isLoggedIn && locals.loggedInUser.username === comment.name) { %>
               <form action="/images/<%= image.id %>/comments/<%= comment.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
@@ -72,3 +71,5 @@
               </form>
             </div>
           </div>
+
+        </section>

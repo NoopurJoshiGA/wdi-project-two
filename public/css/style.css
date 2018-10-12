@@ -13,6 +13,10 @@ body {
   height: auto;
 }
 
+.button {
+  margin-top: 30px;
+}
+
 /* Typography */
 
 h1 {
@@ -32,11 +36,15 @@ h3 {
 }
 
 h4 {
-font-size: 1rem;
+  font-size: 1rem;
 }
 
 h5 {
+  font-size: 0.9rem;font-weight: bold;
+}
 
+h6 {
+  font-size: 0.9rem;
 }
 
 p {
@@ -49,12 +57,25 @@ a {
 
 /* Navbar */
 
+.navbar-menu {
+  background-color: #fff;
+}
+
+.navbar-brand {
+  align-items: center;
+}
+
+.navbar-burger {
+
+}
+
 .navbar {
+  width: 100%;
+  background-color: #fff;
   border-bottom: #cbcbcb;
   -webkit-box-shadow:0px 1px 1px #cbcbcb;
   -moz-box-shadow:0px 1px 1px #cbcbcb;
   box-shadow:0px 1px 1px #cbcbcb;
-  background-color: aliceblue;
 }
 
 .navbar-item {
@@ -62,6 +83,27 @@ a {
   text-transform: uppercase;
   font-size: 0.8rem;
   text-align: right;
+}
+
+/* Header */
+
+.instagramLogo {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0 20px 0;
+}
+
+.instagramLogo:hover {
+  background-color: none;
+}
+
+/* Users Index Page */
+
+.usersSection, .userProfileSection {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 img {
@@ -86,21 +128,20 @@ img:hover {
 
 .editProfilePic {
   border-radius: 50%;
-  max-width: 400px;
+  max-width: 200px;
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 40px;
+  height: 200px;
+  /* margin-bottom: 40px; */
 }
 
-.instagramLogo {
-  width: 300px;
-  height: auto;
+/* Login and Registration */
+
+.loginForm, .registrationForm, .uploadImageForm {
+  height: 50vh;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 20px 0 20px 0;
-}
-
-.instagramLogo:hover {
-  background-color: none;
 }
 
 .registrationMessage {
@@ -120,7 +161,6 @@ img:hover {
   transition: 0.2s;
 }
 
-
 .fa-heart {
   color: white;
   display: none;
@@ -130,8 +170,12 @@ img:hover {
   font-size: 2rem;
 }
 
+.deleteAccountForm {
+  margin-top: 50px;
+}
+
 .deleteAccountBtn {
-  margin-top: 80px;
+  margin: 0 auto;
 }
 
 .usersOnInstagram {
@@ -142,22 +186,6 @@ img:hover {
 
 .usersOnInstagramText {
   padding: 10px;
-}
-
-.message-body {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-#message {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-#message-body {
-
 }
 
 .alignTextCenter {
@@ -171,7 +199,7 @@ img:hover {
 }
 
 .user:first-child {
-    border-top: 1px solid #dfdfdf;
+  border-top: 1px solid #dfdfdf;
 }
 
 .user {
@@ -206,19 +234,60 @@ img:hover {
   margin: 0 auto;
 }
 
+.levelStyle {
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 4px;
+}
 
-/* LOGIN AND REGISTRATION FORM */
-.loginForm, .registrationForm, .uploadImageForm {
-  height: 50vh;
+.commentContent {
+  width: 100%;
+  height: auto;
+}
+
+/* Edit Profile Page */
+
+.editProfileForm {
+  height: 100vh;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.levelStyle {
-  border-top: 1px solid #dfdfdf;
-  border-bottom: 1px solid #dfdfdf;
-  padding: 4px;
+.deleteAccountForm {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.deleteAccountBtn span {
+  padding-right: 20px;
+}
+
+
+/* Messages */
+
+.message {
+  margin-bottom: 0px;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 0rem;
+}
+
+.message-body {
+  text-align: center;
+}
+
+#message {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#message-body {
+
 }
 
 /* Footer */
