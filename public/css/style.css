@@ -9,6 +9,7 @@ body {
 }
 
 .section {
+  padding-top: 100px;
   min-height: 100vh;
   height: auto;
 }
@@ -25,7 +26,7 @@ h1 {
 
 h2 {
   text-align: center;
-  padding: 20px 0 20px 0;
+  padding: 50px 0 20px 0;
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -269,7 +270,7 @@ img:hover {
 /* Messages */
 
 .message {
-  margin-bottom: 0px;
+  margin: 50px 0 0 0;
 }
 
 .message:not(:last-child) {
@@ -280,11 +281,6 @@ img:hover {
   text-align: center;
 }
 
-#message {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
-}
 
 #message-body {
 
