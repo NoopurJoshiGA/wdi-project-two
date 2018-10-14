@@ -62,6 +62,5 @@ I started the project using wireframes that were given to us as part of the proj
 ## Future Features
 - Add a search bar feature to search for other users on the app
 - Add functionality so users can follow and unfollow each other
-- Incorporate FileStack to allow users to upload images from their phone/laptop
-- Fix the Burger Navbar
-- Complete the styling to make it fully mobile, tablet and desktop responsive
+- Fix bugs, when the page loads, the burger navigation is active. It should only be active when the user clicks on the burger.
+- Optimise the app so that it's fully mobile, tablet and desktop responsive

@@ -1,20 +1,25 @@
 
-<h2 class="title is-2">Edit</h2>
-<% if (locals.isLoggedIn) { %>
-  <img src="<%= image.image %>">
-  <% } %>
-
-<form method="POST" action="/images/<%= image.id %>">
+<div class="section editImageSection">
+  <h2>Edit</h2>
+  <% if (locals.isLoggedIn) { %>
+    <img src="<%= image.image %>">
+    <% } %>
+<form class="editImageForm" method="POST" action="/images/<%= image.id %>">
   <div class="field">
     <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= image.location %>" name="location">
+      <input class="input is-fullwidth" type="text" value="<%= image.location %>" name="location" placeholder="Location (optional)">
     </div>
   </div>
   <div class="field">
     <div class="control">
-      <input class="input is-fullwidth" type="text" value="<%= image.description %>" name="description">
+      <input class="input is-fullwidth" type="text" value="<%= image.description %>" name="description" placeholder="Description (optional)">
     </div>
   </div>
   <input type="hidden" name="_method" value="PUT">
   <button class="button is-link is-fullwidth">Save</button>
 </form>
+
+<button class="button is-fullwidth deleteImageBtn"><span>Delete Account</span><i class="fas fa-trash"></i></button>
+<input type="hidden" name="_method" value="DELETE">
+
+</div>

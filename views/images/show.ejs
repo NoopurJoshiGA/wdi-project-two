@@ -2,7 +2,6 @@
 <section class="section imagesShowSection">
 
   <div class="columns is-multiline is-mobile">
-
     <%# Profile pic, username & location %>
     <div class="column is-primary is-2-mobile is-1-desktop">
       <figure class="image is-64x64">
@@ -12,21 +11,13 @@
     <div class="column is-3-mobile is-4-desktop">
       <h5><%= image.createdBy.username %></h5>
       <h6><i class="fas fa-map-marker-alt"></i> <%= image.location %></h6>
+      <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
+        <a class="button is-small" href="/images/<%= image.id %>/edit">Edit</a>
+        <form class="" action="/images/<%= image.id %>" method="POST"></form>
+        <% } %>
     </div>
   </div>
-
-
-      <%# Show image if the it belongs to current logged in user  %>
-      <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
-        <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
-        <form class="" action="/images/<%= image.id %>" method="POST">
-        </div>
-        <div class="level-right">
-        <button class="button is-warning">Delete</button>
-        <input type="hidden" name="_method" value="DELETE">
-        </form>
-        <% } %>
-
+  
     <div class="columns is-mobile is-multiline">
       <div class="column is-half-desktop is-full-mobile">
         <img src="<%= image.image %>" alt="user image">
@@ -36,19 +27,6 @@
         <h6><%= image.description %> </h6>
         <hr>
         <h5>Comments</h5>
-        <div class="level is-mobile">
-          <div class="level-left">
-            <% if(locals.loggedInUser.id === image.createdBy.id && locals.isLoggedIn) { %>
-              <a class="button is-info" href="/images/<%= image.id %>/edit">Edit</a>
-              <form class="" action="/images/<%= image.id %>" method="POST">
-              </div>
-              <div class="level-right">
-              <button class="button is-warning">Delete</button>
-              <input type="hidden" name="_method" value="DELETE">
-              </form>
-              <% } %>
-            </div>
-          </div>
           <% image.comments.forEach(comment => { %>
             <h5><%= comment.name %></h5>
             <h6 class="commentContent"><%= comment.content %></h6>
