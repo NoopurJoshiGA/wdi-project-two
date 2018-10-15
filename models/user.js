@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Require Bcrypt
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const Image = require('./image');
 
